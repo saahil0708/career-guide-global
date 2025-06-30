@@ -1,6 +1,10 @@
-import Layout from "./Layout/Layout"
+import Layout from "./Layout/Home";
 
-export default() => {
+export const metadata = {
+    title: 'Career Guide Global'
+}
+
+export default () => {
     return (
         <>
             <Layout />
