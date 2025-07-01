@@ -20,19 +20,10 @@ const CareerCounselingNavbar = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { 
-      name: 'Services', 
-      href: '/services',
-      dropdown: [
-        { name: 'Career Assessment', href: '/services/assessment', icon: <Award className="w-4 h-4" /> },
-        { name: 'Resume Building', href: '/services/resume', icon: <BookOpen className="w-4 h-4" /> },
-        { name: 'Interview Coaching', href: '/services/interview', icon: <Users className="w-4 h-4" /> },
-        { name: 'Career Planning', href: '/services/planning', icon: <Star className="w-4 h-4" /> }
-      ]
-    },
     { name: 'About', href: '/about' },
     { name: 'Gallery', href: '/gallery' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact', href: '/contact' },
+    { name: `Students' Corner`, href: '/students-corner' },
   ];
 
   return (

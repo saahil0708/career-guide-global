@@ -1,19 +1,15 @@
+import Footer from "../Components/Global/Footer";
 import CareerCounselingNavbar from "../Components/Global/Navbar";
 import CursorGradient from "../Components/Home/CursorGradient";
-import GalleryImages from '../Components/Gallery/First';
-import StudentsGallery from "../Components/Gallery/StudentGallery";
-import Footer from "../Components/Global/Footer";
-import SmallCTA from "../Components/Gallery/CTA";
+import CounselingStudents from "../Components/Students/List";
 
-export default function GalleryLayout() {
+export default function StudentsLayout() {
     return (
         <div className="max-w-full min-h-screen">
             <CursorGradient />
             <CareerCounselingNavbar />
             <div className="mx-auto px-4 py-2">
-                <GalleryImages />
-                <StudentsGallery />
-                <SmallCTA />
+                <CounselingStudents />
             </div>
             <Footer />
         </div>
