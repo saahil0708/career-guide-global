@@ -304,8 +304,7 @@ export default function SuccessStories() {
     return matchesSearch && matchesStatus
   })
 
-  const openModal = (student, e) => {
-    e.stopPropagation()
+  const openModal = (student) => {
     setSelectedStudent(student)
     document.body.style.overflow = "hidden"
   }
@@ -485,10 +484,10 @@ export default function SuccessStories() {
                         </div>
 
                         {/* Arrow Button - Only this opens modal */}
-                        <div className="transition-opacity duration-300 pt-2 flex justify-end" onClick={() => openModal(student)}>
+                        <div className="transition-opacity duration-300 pt-2 flex justify-end">
                           <Button
-                            onClick={(e) => openModal(student, e)}
-                            className="w-[45px] h-[45px] bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-full text-sm"
+                            onClick={() => openModal(student)}
+                            className="w-[45px] h-[45px] cursor-pointer bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-full text-sm z-10 relative pointer-events-auto"
                           >
                             <ArrowRight className="!w-[25px] !h-[25px] transform -rotate-[40deg] transition-transform duration-300 group-hover:rotate-[0deg]" />
                           </Button>
@@ -531,7 +530,7 @@ export default function SuccessStories() {
                   </div>
 
                   <div className="flex-1 space-y-2 sm:space-y-3 text-center sm:text-left">
-                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2">
                       <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">{selectedStudent.name}</h2>
                       <Badge className="bg-white/20 text-white border-white/30 text-xs sm:text-sm">
                         <Award className="w-3 h-3 mr-1" />
@@ -543,13 +542,13 @@ export default function SuccessStories() {
                       {selectedStudent.currentYear} • {selectedStudent.major}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-white/80 text-xs sm:text-sm">
-                      <div className="flex items-center gap-1">
-                        <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
-                        <span className="text-center sm:text-left">{selectedStudent.university}</span>
+                    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 pt-2">
+                      <div className="flex items-center gap-2">
+                        <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span className="text-base sm:text-lg lg:text-xl font-bold">{selectedStudent.university}</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <Building className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <div className="flex items-center gap-2">
+                        <Building className="w-4 h-4 sm:w-5 sm:h-5" />
                         <span>{selectedStudent.company}</span>
                       </div>
                     </div>
@@ -569,166 +568,168 @@ export default function SuccessStories() {
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Content Section */}
-              <div className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
-                {/* Success Story */}
-                <div className="space-y-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
-                    Success Story
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{selectedStudent.bio}</p>
-                </div>
+                {/* Content Section */}
+                <div className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
+                  {/* Success Story */}
+                  <div className="space-y-3">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                      <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+                      Success Story
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{selectedStudent.bio}</p>
+                  </div>
 
-                {/* Upcoming Role */}
-                <div className="bg-emerald-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-emerald-100">
-                  <h4 className="font-semibold text-emerald-900 mb-3 flex items-center gap-2 text-sm sm:text-base">
-                    <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
-                    Upcoming Role
-                  </h4>
-                  <div className="space-y-2">
-                    <p className="text-emerald-800 font-medium text-base sm:text-lg">{selectedStudent.upcomingRole}</p>
-                    <p className="text-emerald-700 text-sm sm:text-base">{selectedStudent.company}</p>
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-emerald-600 text-xs sm:text-sm">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
-                        <span>Starts {selectedStudent.startDate}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-                        <span>{selectedStudent.location}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
-                        <span>{selectedStudent.expectedSalary}</span>
+                  {/* Upcoming Role */}
+                  <div className="bg-emerald-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-emerald-100">
+                    <h4 className="font-semibold text-emerald-900 mb-3 flex items-center gap-2 text-sm sm:text-base">
+                      <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
+                      Upcoming Role
+                    </h4>
+                    <div className="space-y-2">
+                      <p className="text-emerald-800 font-medium text-base sm:text-lg">
+                        {selectedStudent.upcomingRole}
+                      </p>
+                      <p className="text-emerald-700 text-sm sm:text-base">{selectedStudent.company}</p>
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-emerald-600 text-xs sm:text-sm">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <span>Starts {selectedStudent.startDate}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <span>{selectedStudent.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <span>{selectedStudent.expectedSalary}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Counseling Impact */}
-                <div className="bg-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-100">
-                  <h4 className="font-semibold text-blue-900 mb-3 flex items-center gap-2 text-sm sm:text-base">
-                    <Target className="w-4 h-4 sm:w-5 sm:h-5" />
-                    How Our Counseling Helped
-                  </h4>
-                  <p className="text-blue-800 leading-relaxed text-sm sm:text-base">
-                    {selectedStudent.counselingImpact}
-                  </p>
-                  <div className="mt-3 text-xs sm:text-sm text-blue-600">
-                    <strong>Counseling Period:</strong> {selectedStudent.counselingPeriod}
+                  {/* Counseling Impact */}
+                  <div className="bg-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-100">
+                    <h4 className="font-semibold text-blue-900 mb-3 flex items-center gap-2 text-sm sm:text-base">
+                      <Target className="w-4 h-4 sm:w-5 sm:h-5" />
+                      How Our Counseling Helped
+                    </h4>
+                    <p className="text-blue-800 leading-relaxed text-sm sm:text-base">
+                      {selectedStudent.counselingImpact}
+                    </p>
+                    <div className="mt-3 text-xs sm:text-sm text-blue-600">
+                      <strong>Counseling Period:</strong> {selectedStudent.counselingPeriod}
+                    </div>
                   </div>
-                </div>
 
-                {/* Current Projects & Internships */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                  {/* Current Projects & Internships */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Internships & Experience</h4>
+                      <div className="space-y-2">
+                        {selectedStudent.internships.map((internship, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
+                            <span>{internship}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Current Projects</h4>
+                      <div className="space-y-2">
+                        {selectedStudent.currentProjects.map((project, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
+                            <span>{project}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Achievements */}
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Internships & Experience</h4>
-                    <div className="space-y-2">
-                      {selectedStudent.internships.map((internship, idx) => (
+                    <h4 className="font-semibold text-slate-900 flex items-center gap-2 text-sm sm:text-base">
+                      <Award className="w-4 h-4 sm:w-4 sm:h-4 text-emerald-600" />
+                      Key Achievements
+                    </h4>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                      {selectedStudent.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
                           <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
-                          <span>{internship}</span>
+                          <span>{achievement}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
+                  {/* Skills */}
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Current Projects</h4>
-                    <div className="space-y-2">
-                      {selectedStudent.currentProjects.map((project, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
-                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
-                          <span>{project}</span>
-                        </div>
+                    <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Key Skills</h4>
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                      {selectedStudent.skills.map((skill, idx) => (
+                        <Badge
+                          key={idx}
+                          className="bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs sm:text-sm"
+                        >
+                          {skill}
+                        </Badge>
                       ))}
                     </div>
                   </div>
-                </div>
 
-                {/* Achievements */}
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-slate-900 flex items-center gap-2 text-sm sm:text-base">
-                    <Award className="w-4 h-4 sm:w-4 sm:h-4 text-emerald-600" />
-                    Key Achievements
-                  </h4>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
-                    {selectedStudent.achievements.map((achievement, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
-                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
-                        <span>{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Skills */}
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Key Skills</h4>
-                  <div className="flex flex-wrap gap-1 sm:gap-2">
-                    {selectedStudent.skills.map((skill, idx) => (
-                      <Badge
-                        key={idx}
-                        className="bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs sm:text-sm"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Reviews about Counseling */}
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-slate-900 flex items-center gap-2 text-sm sm:text-base">
-                    <Star className="w-4 h-4 sm:w-4 sm:h-4 text-amber-500" />
-                    Counseling Experience Reviews
-                  </h4>
+                  {/* Reviews about Counseling */}
                   <div className="space-y-4">
-                    {selectedStudent.reviews.map((review) => (
-                      <div
-                        key={review.id}
-                        className="bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100"
-                      >
-                        <div className="flex flex-col sm:flex-row items-start justify-between mb-3 gap-2">
-                          <div>
-                            <p className="font-medium text-slate-900 text-sm sm:text-base">{review.aspect}</p>
-                            <p className="text-xs sm:text-sm text-slate-500">
-                              {new Date(review.date).toLocaleDateString()}
-                            </p>
+                    <h4 className="font-semibold text-slate-900 flex items-center gap-2 text-sm sm:text-base">
+                      <Star className="w-4 h-4 sm:w-4 sm:h-4 text-amber-500" />
+                      Counseling Experience Reviews
+                    </h4>
+                    <div className="space-y-4">
+                      {selectedStudent.reviews.map((review) => (
+                        <div
+                          key={review.id}
+                          className="bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100"
+                        >
+                          <div className="flex flex-col sm:flex-row items-start justify-between mb-3 gap-2">
+                            <div>
+                              <p className="font-medium text-slate-900 text-sm sm:text-base">{review.aspect}</p>
+                              <p className="text-xs sm:text-sm text-slate-500">
+                                {new Date(review.date).toLocaleDateString()}
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`w-3 h-3 sm:w-4 sm:h-4 ${
+                                    i < review.rating ? "fill-amber-400 text-amber-400" : "text-slate-300"
+                                  }`}
+                                />
+                              ))}
+                            </div>
                           </div>
-                          <div className="flex items-center gap-1">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`w-3 h-3 sm:w-4 sm:h-4 ${
-                                  i < review.rating ? "fill-amber-400 text-amber-400" : "text-slate-300"
-                                }`}
-                              />
-                            ))}
-                          </div>
+                          <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">{review.comment}</p>
                         </div>
-                        <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">{review.comment}</p>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Contact & Mentorship */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 border-t border-slate-100">
-                  <Button className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-xl text-sm sm:text-base py-2 sm:py-3">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Connect for Mentorship
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="flex-1 border-emerald-200 text-emerald-700 hover:bg-emerald-50 rounded-xl bg-transparent text-sm sm:text-base py-2 sm:py-3"
-                  >
-                    <Mail className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
+                  {/* Contact & Mentorship */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 border-t border-slate-100">
+                    <Button className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-xl text-sm sm:text-base py-2 sm:py-3">
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Connect for Mentorship
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="flex-1 border-emerald-200 text-emerald-700 hover:bg-emerald-50 rounded-xl bg-transparent text-sm sm:text-base py-2 sm:py-3"
+                    >
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send Message
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
