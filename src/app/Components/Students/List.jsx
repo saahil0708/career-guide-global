@@ -304,7 +304,8 @@ export default function SuccessStories() {
     return matchesSearch && matchesStatus
   })
 
-  const openModal = (student) => {
+  const openModal = (student, e) => {
+    e.stopPropagation()
     setSelectedStudent(student)
     document.body.style.overflow = "hidden"
   }
@@ -320,7 +321,6 @@ export default function SuccessStories() {
       <section className="relative py-16 lg:py-24">
         <div className="absolute inset-0" />
         <div className="absolute inset-0" />
-
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="space-y-4">
@@ -328,7 +328,9 @@ export default function SuccessStories() {
                 <Award className="w-5 h-5 mr-2" />
                 Current Student Success Stories
               </Badge>
-              <br /><br />
+
+              <br />
+              <br />
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
                 <span className="block text-slate-900">Students</span>
@@ -378,23 +380,6 @@ export default function SuccessStories() {
                 className="w-full pl-4 pr-4 py-3 bg-slate-50/50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-400 transition-all duration-300"
               />
             </div>
-
-            {/* <div className="flex gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
-              {statuses.map((status) => (
-                <Button
-                  key={status}
-                  onClick={() => setFilterStatus(status)}
-                  variant="ghost"
-                  className={`rounded-full px-4 py-2 transition-all duration-300 whitespace-nowrap border capitalize ${
-                    filterStatus === status
-                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg border-transparent"
-                      : "border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-600 hover:bg-emerald-50/50"
-                  }`}
-                >
-                  {status === "all" ? "All Students" : status}
-                </Button>
-              ))}
-            </div> */}
           </div>
         </div>
       </section>
@@ -415,8 +400,7 @@ export default function SuccessStories() {
               {filteredStudents.map((student, index) => (
                 <div
                   key={student.id}
-                  className="group cursor-pointer"
-                  onClick={() => openModal(student)}
+                  className="group"
                   style={{
                     animationDelay: `${index * 100}ms`,
                   }}
@@ -500,9 +484,12 @@ export default function SuccessStories() {
                           </div>
                         </div>
 
-                        {/* Hover Action */}
-                        <div className="transition-opacity duration-300 pt-2 flex justify-end">
-                          <Button className="w-[45px] h-[45px] bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-full text-sm">
+                        {/* Arrow Button - Only this opens modal */}
+                        <div className="transition-opacity duration-300 pt-2 flex justify-end" onClick={() => openModal(student)}>
+                          <Button
+                            onClick={(e) => openModal(student, e)}
+                            className="w-[45px] h-[45px] bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-full text-sm"
+                          >
                             <ArrowRight className="!w-[25px] !h-[25px] transform -rotate-[40deg] transition-transform duration-300 group-hover:rotate-[0deg]" />
                           </Button>
                         </div>
@@ -519,23 +506,23 @@ export default function SuccessStories() {
         </div>
       </section>
 
-      {/* Detailed Modal */}
+      {/* Responsive Modal */}
       {selectedStudent && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="relative max-w-5xl max-h-[90vh] w-full bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4">
+          <div className="relative w-full max-w-6xl max-h-[95vh] sm:max-h-[90vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
             {/* Close Button */}
             <Button
               onClick={closeModal}
-              className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full p-0 bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-200"
+              className="absolute top-3 right-3 sm:top-6 sm:right-6 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full p-0 bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-200"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
 
-            <div className="overflow-y-auto max-h-[90vh]">
+            <div className="overflow-y-auto max-h-[95vh] sm:max-h-[90vh]">
               {/* Header Section */}
-              <div className="relative bg-gradient-to-br from-emerald-500 to-teal-500 p-8 text-white">
-                <div className="flex items-start gap-6">
-                  <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-xl border-4 border-white/20">
+              <div className="relative bg-gradient-to-br from-emerald-500 to-teal-500 p-4 sm:p-6 lg:p-8 text-white">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-2 sm:border-4 border-white/20 mx-auto sm:mx-0">
                     <img
                       src={selectedStudent.avatar || "/placeholder.svg"}
                       alt={selectedStudent.name}
@@ -543,39 +530,41 @@ export default function SuccessStories() {
                     />
                   </div>
 
-                  <div className="flex-1 space-y-3">
-                    <div className="flex items-center gap-3">
-                      <h2 className="text-3xl font-bold">{selectedStudent.name}</h2>
-                      <Badge className="bg-white/20 text-white border-white/30">
+                  <div className="flex-1 space-y-2 sm:space-y-3 text-center sm:text-left">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3">
+                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">{selectedStudent.name}</h2>
+                      <Badge className="bg-white/20 text-white border-white/30 text-xs sm:text-sm">
                         <Award className="w-3 h-3 mr-1" />
                         {selectedStudent.status}
                       </Badge>
                     </div>
 
-                    <p className="text-white/90 text-lg">
+                    <p className="text-white/90 text-sm sm:text-base lg:text-lg">
                       {selectedStudent.currentYear} • {selectedStudent.major}
                     </p>
 
-                    <div className="flex items-center gap-4 text-white/80">
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-white/80 text-xs sm:text-sm">
                       <div className="flex items-center gap-1">
-                        <GraduationCap className="w-4 h-4" />
-                        <span>{selectedStudent.university}</span>
+                        <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
+                        <span className="text-center sm:text-left">{selectedStudent.university}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Building className="w-4 h-4" />
+                        <Building className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{selectedStudent.company}</span>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-6 pt-2">
+                    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 pt-2">
                       <div className="flex items-center gap-2">
-                        <TrendingUp className="w-5 h-5" />
-                        <span className="text-xl font-bold">GPA: {selectedStudent.currentGPA}</span>
+                        <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span className="text-base sm:text-lg lg:text-xl font-bold">
+                          GPA: {selectedStudent.currentGPA}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Star className="w-5 h-5 fill-amber-300 text-amber-300" />
-                        <span className="text-xl font-bold">{selectedStudent.rating}</span>
-                        <span className="text-white/80">Rating</span>
+                        <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-300 text-amber-300" />
+                        <span className="text-base sm:text-lg lg:text-xl font-bold">{selectedStudent.rating}</span>
+                        <span className="text-white/80 text-sm sm:text-base">Rating</span>
                       </div>
                     </div>
                   </div>
@@ -583,36 +572,36 @@ export default function SuccessStories() {
               </div>
 
               {/* Content Section */}
-              <div className="p-8 space-y-8">
+              <div className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
                 {/* Success Story */}
                 <div className="space-y-3">
-                  <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-emerald-600" />
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
                     Success Story
                   </h3>
-                  <p className="text-slate-600 leading-relaxed">{selectedStudent.bio}</p>
+                  <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{selectedStudent.bio}</p>
                 </div>
 
                 {/* Upcoming Role */}
-                <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
-                  <h4 className="font-semibold text-emerald-900 mb-3 flex items-center gap-2">
-                    <Briefcase className="w-5 h-5" />
+                <div className="bg-emerald-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-emerald-100">
+                  <h4 className="font-semibold text-emerald-900 mb-3 flex items-center gap-2 text-sm sm:text-base">
+                    <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
                     Upcoming Role
                   </h4>
                   <div className="space-y-2">
-                    <p className="text-emerald-800 font-medium text-lg">{selectedStudent.upcomingRole}</p>
-                    <p className="text-emerald-700">{selectedStudent.company}</p>
-                    <div className="flex items-center gap-4 text-emerald-600 text-sm">
+                    <p className="text-emerald-800 font-medium text-base sm:text-lg">{selectedStudent.upcomingRole}</p>
+                    <p className="text-emerald-700 text-sm sm:text-base">{selectedStudent.company}</p>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-emerald-600 text-xs sm:text-sm">
                       <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>Starts {selectedStudent.startDate}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
+                        <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{selectedStudent.location}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <TrendingUp className="w-4 h-4" />
+                        <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{selectedStudent.expectedSalary}</span>
                       </div>
                     </div>
@@ -620,25 +609,27 @@ export default function SuccessStories() {
                 </div>
 
                 {/* Counseling Impact */}
-                <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-                  <h4 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
-                    <Target className="w-5 h-5" />
+                <div className="bg-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-100">
+                  <h4 className="font-semibold text-blue-900 mb-3 flex items-center gap-2 text-sm sm:text-base">
+                    <Target className="w-4 h-4 sm:w-5 sm:h-5" />
                     How Our Counseling Helped
                   </h4>
-                  <p className="text-blue-800 leading-relaxed">{selectedStudent.counselingImpact}</p>
-                  <div className="mt-3 text-sm text-blue-600">
+                  <p className="text-blue-800 leading-relaxed text-sm sm:text-base">
+                    {selectedStudent.counselingImpact}
+                  </p>
+                  <div className="mt-3 text-xs sm:text-sm text-blue-600">
                     <strong>Counseling Period:</strong> {selectedStudent.counselingPeriod}
                   </div>
                 </div>
 
                 {/* Current Projects & Internships */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-slate-900">Internships & Experience</h4>
+                    <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Internships & Experience</h4>
                     <div className="space-y-2">
                       {selectedStudent.internships.map((internship, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                          <CheckCircle className="w-4 h-4 text-emerald-600" />
+                        <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
                           <span>{internship}</span>
                         </div>
                       ))}
@@ -646,11 +637,11 @@ export default function SuccessStories() {
                   </div>
 
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-slate-900">Current Projects</h4>
+                    <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Current Projects</h4>
                     <div className="space-y-2">
                       {selectedStudent.currentProjects.map((project, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                          <CheckCircle className="w-4 h-4 text-emerald-600" />
+                        <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
                           <span>{project}</span>
                         </div>
                       ))}
@@ -660,14 +651,14 @@ export default function SuccessStories() {
 
                 {/* Achievements */}
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-slate-900 flex items-center gap-2">
-                    <Award className="w-4 h-4 text-emerald-600" />
+                  <h4 className="font-semibold text-slate-900 flex items-center gap-2 text-sm sm:text-base">
+                    <Award className="w-4 h-4 sm:w-4 sm:h-4 text-emerald-600" />
                     Key Achievements
                   </h4>
-                  <div className="grid md:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
                     {selectedStudent.achievements.map((achievement, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                        <CheckCircle className="w-4 h-4 text-emerald-600" />
+                      <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
                         <span>{achievement}</span>
                       </div>
                     ))}
@@ -676,10 +667,13 @@ export default function SuccessStories() {
 
                 {/* Skills */}
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-slate-900">Key Skills</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <h4 className="font-semibold text-slate-900 text-sm sm:text-base">Key Skills</h4>
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {selectedStudent.skills.map((skill, idx) => (
-                      <Badge key={idx} className="bg-emerald-100 text-emerald-700 border border-emerald-200">
+                      <Badge
+                        key={idx}
+                        className="bg-emerald-100 text-emerald-700 border border-emerald-200 text-xs sm:text-sm"
+                      >
                         {skill}
                       </Badge>
                     ))}
@@ -688,44 +682,49 @@ export default function SuccessStories() {
 
                 {/* Reviews about Counseling */}
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-slate-900 flex items-center gap-2">
-                    <Star className="w-4 h-4 text-amber-500" />
+                  <h4 className="font-semibold text-slate-900 flex items-center gap-2 text-sm sm:text-base">
+                    <Star className="w-4 h-4 sm:w-4 sm:h-4 text-amber-500" />
                     Counseling Experience Reviews
                   </h4>
                   <div className="space-y-4">
                     {selectedStudent.reviews.map((review) => (
-                      <div key={review.id} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                        <div className="flex items-start justify-between mb-3">
+                      <div
+                        key={review.id}
+                        className="bg-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100"
+                      >
+                        <div className="flex flex-col sm:flex-row items-start justify-between mb-3 gap-2">
                           <div>
-                            <p className="font-medium text-slate-900">{review.aspect}</p>
-                            <p className="text-sm text-slate-500">{new Date(review.date).toLocaleDateString()}</p>
+                            <p className="font-medium text-slate-900 text-sm sm:text-base">{review.aspect}</p>
+                            <p className="text-xs sm:text-sm text-slate-500">
+                              {new Date(review.date).toLocaleDateString()}
+                            </p>
                           </div>
                           <div className="flex items-center gap-1">
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
-                                className={`w-4 h-4 ${
+                                className={`w-3 h-3 sm:w-4 sm:h-4 ${
                                   i < review.rating ? "fill-amber-400 text-amber-400" : "text-slate-300"
                                 }`}
                               />
                             ))}
                           </div>
                         </div>
-                        <p className="text-slate-600 leading-relaxed">{review.comment}</p>
+                        <p className="text-slate-600 leading-relaxed text-xs sm:text-sm">{review.comment}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Contact & Mentorship */}
-                <div className="flex gap-4 pt-6 border-t border-slate-100">
-                  <Button className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-xl">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 border-t border-slate-100">
+                  <Button className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg transition-all duration-300 rounded-xl text-sm sm:text-base py-2 sm:py-3">
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Connect for Mentorship
                   </Button>
                   <Button
                     variant="outline"
-                    className="flex-1 border-emerald-200 text-emerald-700 hover:bg-emerald-50 rounded-xl bg-transparent"
+                    className="flex-1 border-emerald-200 text-emerald-700 hover:bg-emerald-50 rounded-xl bg-transparent text-sm sm:text-base py-2 sm:py-3"
                   >
                     <Mail className="w-4 h-4 mr-2" />
                     Send Message
