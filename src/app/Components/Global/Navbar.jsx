@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, User, Phone, Mail, MapPin, Calendar, ArrowRight, Star, Users, Award, BookOpen } from 'lucide-react';
 
+import Link from 'next/link';
+
 const CareerCounselingNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +31,7 @@ const CareerCounselingNavbar = () => {
       ]
     },
     { name: 'About', href: '/about' },
-    { name: 'Resources', href: '/resources' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' }
   ];
 

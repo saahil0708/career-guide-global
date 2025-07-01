@@ -74,7 +74,7 @@ export default function AboutUsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 overflow-hidden">
         {/* Simple Background with Minimal Clipping */}
