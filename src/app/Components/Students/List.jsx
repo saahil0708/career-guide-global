@@ -1068,7 +1068,7 @@ export default function SuccessStories() {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#b51d2a]/10 rounded-full blur-3xl animate-pulse delay-1000" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#d62332]/5 to-[#b51d2a]/5 rounded-full blur-3xl" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl pt-5 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 sm:space-y-8">
             <div className="space-y-3 sm:space-y-4">
               <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border border-[#d62332]/50 rounded-full px-4 py-1 sm:px-6 sm:py-2 text-sm sm:text-base font-medium">
