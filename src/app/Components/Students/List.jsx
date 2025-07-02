@@ -1023,7 +1023,8 @@ const successfulStudents = [
     mentorshipOffered: true,
     currentProjects: ["Junior Data Science Capstone", "Netflix Internship Prep"],
   },
-]
+  // ... (other student data remains the same)
+];
 
 export default function SuccessStories() {
   const [selectedStudent, setSelectedStudent] = useState(null)
@@ -1059,52 +1060,48 @@ export default function SuccessStories() {
   }
 
   return (
-    <div className="min-h-screen pt-10">
+    <div className="min-h-screen pt-8 sm:pt-10">
       {/* Header Section */}
-      <section className="relative py-16 lg:py-24">
+      <section className="relative py-8 md:py-12 lg:py-16">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#d62332]/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#b51d2a]/10 rounded-full blur-3xl animate-pulse delay-1000" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#d62332]/5 to-[#b51d2a]/5 rounded-full blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-8">
-            <div className="space-y-4">
-              <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border border-[#d62332]/50 rounded-full px-6 py-2 text-base font-medium">
-                <Award className="w-5 h-5 mr-2" />
+          <div className="text-center space-y-6 sm:space-y-8">
+            <div className="space-y-3 sm:space-y-4">
+              <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border border-[#d62332]/50 rounded-full px-4 py-1 sm:px-6 sm:py-2 text-sm sm:text-base font-medium">
+                <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Current Student Success Stories
               </Badge>
 
-              <br />
-              <br />
-
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
                 <span className="block text-slate-900">Students</span>
                 <span className="block bg-gradient-to-r from-[#d62332] via-[#b51d2a] to-[#a51a26] bg-clip-text text-transparent">
                   Achieving Dreams
                 </span>
               </h1>
 
-              <p className="max-w-2xl mx-auto text-xl text-slate-600 leading-relaxed">
-                Meet current students who transformed their career prospects through our counseling program. From
-                securing dream internships to landing full-time offers at top companies.
+              <p className="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 leading-relaxed">
+                Meet current students who transformed their career prospects through our counseling program.
               </p>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 gap-3 max-w-md mx-auto sm:grid-cols-4 sm:gap-6 sm:max-w-4xl">
               {[
                 { value: `${successfulStudents.length}+`, label: "Success Stories" },
                 { value: "98%", label: "Offer Success Rate" },
-                { value: "$165K", label: "Average Starting Salary" },
-                { value: "100%", label: "Student Satisfaction" },
+                { value: "$165K", label: "Average Salary" },
+                { value: "100%", label: "Satisfaction" },
               ].map((stat, index) => (
                 <div key={index} className="group">
-                  <div className="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                    <div className="text-3xl font-bold text-[#d62332] mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-white/70 backdrop-blur-sm p-3 sm:p-4 md:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-[#d62332] mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                       {stat.value}
                     </div>
-                    <div className="text-slate-600 font-medium">{stat.label}</div>
+                    <div className="text-xs sm:text-sm md:text-base text-slate-600 font-medium">{stat.label}</div>
                   </div>
                 </div>
               ))}
@@ -1115,15 +1112,15 @@ export default function SuccessStories() {
 
       {/* Search and Filter */}
       <section className="sticky top-0 z-20 backdrop-blur-xl border-b border-slate-200/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col lg:justify-center lg:flex-row gap-6 items-center">
-            <div className="relative flex-1 max-w-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col lg:justify-center lg:flex-row gap-4 sm:gap-6 items-center">
+            <div className="relative flex-1 max-w-md w-full">
               <input
                 type="text"
-                placeholder="Search by name, company, role, or university..."
+                placeholder="Search students..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-4 pr-4 py-3 bg-slate-50/50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d62332]/20 focus:border-[#d62332]/50 transition-all duration-300"
+                className="w-full pl-4 pr-4 py-2 sm:py-3 bg-slate-50/50 border border-slate-200 rounded-xl sm:rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d62332]/20 focus:border-[#d62332]/50 transition-all duration-300 text-sm sm:text-base"
               />
             </div>
           </div>
@@ -1131,18 +1128,18 @@ export default function SuccessStories() {
       </section>
 
       {/* Success Stories Grid */}
-      <section className="py-12 lg:py-20">
+      <section className="py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredStudents.length === 0 ? (
-            <div className="text-center py-20">
-              <div className="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center">
-                <Award className="w-16 h-16 text-slate-400" />
+            <div className="text-center py-12 sm:py-20">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center">
+                <Award className="w-12 h-12 sm:w-16 sm:h-16 text-slate-400" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-700 mb-4">No success stories found</h3>
-              <p className="text-slate-500 text-lg">Try adjusting your search or filter criteria</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-700 mb-2 sm:mb-4">No success stories found</h3>
+              <p className="text-slate-500 text-sm sm:text-base">Try adjusting your search criteria</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {filteredStudents.map((student, index) => (
                 <div
                   key={student.id}
@@ -1153,45 +1150,45 @@ export default function SuccessStories() {
                 >
                   {/* Clipped Card Design */}
                   <div
-                    className="relative bg-gray-100 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 hover:scale-[1.02] overflow-hidden border border-slate-100"
+                    className="relative bg-gray-100 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden border border-slate-100"
                     style={{
                       clipPath:
-                        "polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% 100%, 25px 100%, 0 calc(100% - 25px))",
+                        "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
                     }}
                   >
                     {/* Background Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#d62332]/10 via-white to-[#b51d2a]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    <div className="relative p-6 space-y-4">
-                      {/* Large Image Section - No Clipping */}
-                      <div className="w-full h-48 rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                    <div className="relative p-4 sm:p-6 space-y-3 sm:space-y-4">
+                      {/* Image Section */}
+                      <div className="w-full h-40 sm:h-48 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group-hover:shadow-md transition-shadow duration-500">
                         <img
                           src={student.avatar || "/placeholder.svg"}
                           alt={student.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
 
                       {/* Student Info */}
-                      <div className="space-y-3">
+                      <div className="space-y-2 sm:space-y-3">
                         <div>
-                          <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#d62332] transition-colors duration-300">
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#d62332] transition-colors duration-300">
                             {student.name}
                           </h3>
-                          <p className="text-slate-600 text-sm font-medium">
+                          <p className="text-slate-600 text-xs sm:text-sm font-medium">
                             {student.currentYear} • {student.major}
                           </p>
-                          <p className="text-slate-500 text-sm">{student.university}</p>
+                          <p className="text-slate-500 text-xs sm:text-sm">{student.university}</p>
                         </div>
 
                         {/* Key Stats */}
                         <div className="flex items-center justify-between py-2 border-t border-slate-100">
-                          <div className="flex items-center gap-1 text-sm text-slate-500">
-                            <TrendingUp className="w-4 h-4" />
+                          <div className="flex items-center gap-1 text-xs sm:text-sm text-slate-500">
+                            <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
                             <span>GPA: {student.currentGPA}</span>
                           </div>
-                          <div className="flex items-center gap-1 text-sm text-slate-500">
-                            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          <div className="flex items-center gap-1 text-xs sm:text-sm text-slate-500">
+                            <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-amber-400 text-amber-400" />
                             <span>{student.rating}</span>
                           </div>
                         </div>
@@ -1202,33 +1199,30 @@ export default function SuccessStories() {
                             {student.skills.slice(0, 2).map((skill, idx) => (
                               <Badge
                                 key={idx}
-                                className="bg-[#d62332]/10 text-[#d62332] border border-[#d62332]/20 text-xs"
+                                className="bg-[#d62332]/10 text-[#d62332] border border-[#d62332]/20 text-xs px-2 py-0.5"
                               >
                                 {skill}
                               </Badge>
                             ))}
                             {student.skills.length > 2 && (
-                              <Badge className="bg-slate-100 text-slate-600 border-0 text-xs">
+                              <Badge className="bg-slate-100 text-slate-600 border-0 text-xs px-2 py-0.5">
                                 +{student.skills.length - 2}
                               </Badge>
                             )}
                           </div>
                         </div>
 
-                        {/* Arrow Button - Only this opens modal */}
+                        {/* Arrow Button */}
                         <div className="transition-opacity duration-300 pt-2 flex justify-end">
                           <Button
                             onClick={() => openModal(student)}
-                            className="w-[45px] h-[45px] cursor-pointer bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white hover:shadow-lg transition-all duration-300 rounded-full text-sm z-10 relative pointer-events-auto"
+                            className="w-10 h-10 sm:w-12 sm:h-12 cursor-pointer bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white hover:shadow-lg transition-all duration-300 rounded-full text-sm z-10 relative pointer-events-auto"
                           >
-                            <ArrowRight className="!w-[25px] !h-[25px] transform -rotate-[40deg] transition-transform duration-300 group-hover:rotate-[0deg]" />
+                            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 transform -rotate-[40deg] transition-transform duration-300 group-hover:rotate-[0deg]" />
                           </Button>
                         </div>
                       </div>
                     </div>
-
-                    {/* Decorative Elements */}
-                    <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-[#d62332]/10 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
               ))}
@@ -1240,20 +1234,20 @@ export default function SuccessStories() {
       {/* Responsive Modal */}
       {selectedStudent && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4">
-          <div className="relative w-full max-w-6xl max-h-[95vh] sm:max-h-[90vh] bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
+          <div className="relative w-full max-w-6xl h-[90vh] max-h-[90vh] bg-white rounded-xl sm:rounded-3xl shadow-2xl overflow-hidden mx-2">
             {/* Close Button */}
             <Button
               onClick={closeModal}
-              className="absolute top-3 right-3 sm:top-6 sm:right-6 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full p-0 bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-200"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full p-0 bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-200"
             >
               <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </Button>
 
-            <div className="overflow-y-auto max-h-[95vh] sm:max-h-[90vh]">
+            <div className="overflow-y-auto h-full">
               {/* Header Section */}
               <div className="relative bg-gradient-to-br from-[#d62332] to-[#b51d2a] p-4 sm:p-6 lg:p-8 text-white">
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-2 sm:border-4 border-white/20 mx-auto sm:mx-0">
+                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-lg sm:rounded-xl overflow-hidden shadow-xl border-2 sm:border-4 border-white/20 mx-auto sm:mx-0">
                     <img
                       src={selectedStudent.avatar || "/placeholder.svg"}
                       alt={selectedStudent.name}
@@ -1263,41 +1257,41 @@ export default function SuccessStories() {
 
                   <div className="flex-1 space-y-2 sm:space-y-3 text-center sm:text-left">
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2">
-                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">{selectedStudent.name}</h2>
+                      <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold">{selectedStudent.name}</h2>
                     </div>
 
                     <p className="text-white/90 text-sm sm:text-base lg:text-lg">
                       {selectedStudent.currentYear} • {selectedStudent.major}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 pt-2">
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 pt-2">
                       <div className="flex items-center gap-2">
                         <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span className="text-base sm:text-lg lg:text-xl font-bold">{selectedStudent.university}</span>
+                        <span className="text-sm sm:text-base lg:text-lg font-bold">{selectedStudent.university}</span>
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 pt-2">
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 pt-2">
                       <div className="flex items-center gap-2">
                         <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span className="text-base sm:text-lg lg:text-xl font-bold">
+                        <span className="text-sm sm:text-base lg:text-lg font-bold">
                           GPA: {selectedStudent.currentGPA}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-300 text-amber-300" />
-                        <span className="text-base sm:text-lg lg:text-xl font-bold">{selectedStudent.rating}</span>
-                        <span className="text-white/80 text-sm sm:text-base">Rating</span>
+                        <span className="text-sm sm:text-base lg:text-lg font-bold">{selectedStudent.rating}</span>
+                        <span className="text-white/80 text-xs sm:text-sm">Rating</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
+                <div className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 lg:space-y-8">
                   {/* Success Story */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                  <div className="space-y-2 sm:space-y-3">
+                    <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
                       <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                       Success Story
                     </h3>
@@ -1305,25 +1299,26 @@ export default function SuccessStories() {
                   </div>
 
                   {/* Counseling Impact */}
-                  <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#d62332]/20">
-                    <h4 className="font-semibold text-[#d62332] mb-3 flex items-center gap-2 text-sm sm:text-base">
+                  <div className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-[#d62332]/20">
+                    <h4 className="font-semibold text-[#d62332] mb-2 flex items-center gap-2 text-sm sm:text-base">
                       <Target className="w-4 h-4 sm:w-5 sm:h-5 text-[#d62332]" />
                       How Our Counseling Helped
                     </h4>
                     <p className="text-[#d62332] leading-relaxed text-sm sm:text-base">
                       {selectedStudent.counselingImpact}
                     </p>
-                    <div className="mt-3 text-xs sm:text-sm text-[#d62332]/80">
+                    <div className="mt-2 text-xs sm:text-sm text-[#d62332]/80">
                       <strong>Counseling Period:</strong> {selectedStudent.counselingPeriod}
                     </div>
                   </div>
 
                   {/* Current Projects & Internships */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                    <div className="space-y-3">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+                    <div className="space-y-2 sm:space-y-3">
                       <h4 className="font-semibold text-white flex items-center gap-2 text-sm sm:text-base">
                         <Award className="w-4 h-4 sm:w-4 sm:h-4 text-white" />
-                        Milestones & Experience</h4>
+                        Milestones & Experience
+                      </h4>
                       <div className="space-y-2">
                         {selectedStudent.internships.map((internship, idx) => (
                           <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-white">
@@ -1334,7 +1329,7 @@ export default function SuccessStories() {
                       </div>
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2 sm:space-y-3">
                       <h4 className="font-semibold text-white text-sm sm:text-base">Current Projects</h4>
                       <div className="space-y-2">
                         {selectedStudent.currentProjects.map((project, idx) => (
@@ -1348,13 +1343,13 @@ export default function SuccessStories() {
                   </div>
 
                   {/* Skills */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <h4 className="font-semibold text-white text-sm sm:text-base">Key Skills</h4>
                     <div className="flex flex-wrap gap-1 sm:gap-2">
                       {selectedStudent.skills.map((skill, idx) => (
                         <Badge
                           key={idx}
-                          className="bg-white text-[#d62332] border border-[#d62332]/20 text-xs sm:text-sm"
+                          className="bg-white text-[#d62332] border border-[#d62332]/20 text-xs sm:text-sm px-2 py-0.5"
                         >
                           {skill}
                         </Badge>
@@ -1363,18 +1358,18 @@ export default function SuccessStories() {
                   </div>
 
                   {/* Reviews about Counseling */}
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     <h4 className="font-semibold text-white flex items-center gap-2 text-sm sm:text-base">
                       <Star className="w-4 h-4 sm:w-4 sm:h-4 text-white" />
                       Counseling Experience Reviews
                     </h4>
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       {selectedStudent.reviews.map((review) => (
                         <div
                           key={review.id}
-                          className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-100"
+                          className="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 border border-slate-100"
                         >
-                          <div className="flex flex-col sm:flex-row items-start justify-between mb-3 gap-2">
+                          <div className="flex flex-col sm:flex-row items-start justify-between mb-2 gap-2">
                             <div>
                               <p className="font-medium text-slate-900 text-sm sm:text-base">{review.aspect}</p>
                               <p className="text-xs sm:text-sm text-slate-500">

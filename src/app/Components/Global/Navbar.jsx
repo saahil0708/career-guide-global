@@ -249,7 +249,6 @@ const CareerCounselingNavbar = () => {
     { name: `Students' Corner`, href: '/students-corner' },
   ];
 
-  // Check if a nav item is active
   const isActive = (href) => {
     return pathname === href;
   };
@@ -262,14 +261,16 @@ const CareerCounselingNavbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo - Replaced with Image */}
-          <div className="flex items-center space-x-3">
-            <div className="relative w-40 h-[115px]">
+          {/* Logo with responsive sizing */}
+          <div className="flex items-center">
+            <div className="relative w-32 h-[70px] md:w-40 md:h-[90px] lg:w-48 lg:h-[115px]">
               <Image
                 src={Logo}
                 alt="Career Guide Global Logo"
                 fill
-                className="object-contain"
+                className="object-contain object-left"
+                priority // Important for above-the-fold images
+                sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
               />
             </div>
           </div>
@@ -290,7 +291,6 @@ const CareerCounselingNavbar = () => {
                 >
                   <div className="relative">
                     <span>{item.name}</span>
-                    {/* Animated underline */}
                     <div className={`absolute -bottom-1 left-0 h-0.5 bg-[#d62332] transition-all duration-300 ${
                       isActive(item.href) 
                         ? 'w-full' 
@@ -300,7 +300,6 @@ const CareerCounselingNavbar = () => {
                   {item.dropdown && <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />}
                 </Link>
                 
-                {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.name && (
                   <div 
                     className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-50"
@@ -337,10 +336,11 @@ const CareerCounselingNavbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -349,7 +349,7 @@ const CareerCounselingNavbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`lg:hidden transition-all duration-300 ${
+      <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
         isOpen 
           ? 'max-h-screen opacity-100 visible' 
           : 'max-h-0 opacity-0 invisible'
@@ -380,7 +380,6 @@ const CareerCounselingNavbar = () => {
                   )}
                 </Link>
                 
-                {/* Mobile Dropdown */}
                 {item.dropdown && activeDropdown === item.name && (
                   <div className="pl-4 space-y-2 mt-2">
                     {item.dropdown.map((dropdownItem) => (
@@ -402,7 +401,6 @@ const CareerCounselingNavbar = () => {
               </div>
             ))}
             
-            {/* Mobile CTA Buttons */}
             <div className="pt-4 space-y-3 border-t border-gray-100">
               <button className="w-full flex items-center justify-center space-x-2 px-4 py-3 text-[#d62332] border border-[#d62332] rounded-lg hover:bg-[#d62332]/10 transition-colors duration-200 font-medium">
                 <Phone className="w-4 h-4" />
@@ -415,7 +413,6 @@ const CareerCounselingNavbar = () => {
               </button>
             </div>
 
-            {/* Contact Info */}
             <div className="pt-4 border-t border-gray-100 space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <Mail className="w-4 h-4 text-[#d62332]" />
