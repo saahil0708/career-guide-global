@@ -131,15 +131,15 @@ const Testimonials = () => {
     <section className="py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 -left-20 w-80 h-80 bg-[#4fbe99]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-[#3da582]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 -left-20 w-80 h-80 bg-[#d62332]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-[#b51d2a]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-3 text-sm font-medium">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-3 text-sm font-medium">
               <Quote className="w-4 h-4 mr-2" />
               Client Success Stories
             </Badge>
@@ -149,8 +149,7 @@ const Testimonials = () => {
             <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {`Real Stories `}
             </span>
-            {/* <br /> */}
-            <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
               Real Results
             </span>
           </h2>
@@ -173,8 +172,8 @@ const Testimonials = () => {
               }}
               className={`rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 ${
                 selectedCategory === category
-                  ? "bg-gradient-to-r from-[#4fbe99] to-[#3da582] text-white shadow-lg"
-                  : "border-[#4fbe99]/30 text-[#4fbe99] hover:bg-[#4fbe99]/5"
+                  ? "bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white shadow-lg"
+                  : "border-[#d62332]/30 text-[#d62332] hover:bg-[#d62332]/5"
               }`}
             >
               {category}
@@ -188,7 +187,7 @@ const Testimonials = () => {
             <CardContent className="p-0">
               <div className="grid lg:grid-cols-2 gap-0">
                 {/* Left Side - Video/Image */}
-                <div className="relative bg-gradient-to-br from-[#4fbe99]/10 to-[#3da582]/10 p-8 lg:p-12 flex items-center justify-center">
+                <div className="relative bg-gradient-to-br from-[#d62332]/10 to-[#b51d2a]/10 p-8 lg:p-12 flex items-center justify-center">
                   <div className="relative">
                     <img
                       src={currentData.videoThumbnail || "/placeholder.svg"}
@@ -197,7 +196,7 @@ const Testimonials = () => {
                     />
                     <Button
                       size="lg"
-                      className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-white/90 hover:bg-white text-[#4fbe99] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110"
+                      className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-white/90 hover:bg-white text-[#d62332] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110"
                     >
                       <Play className="w-6 h-6 ml-1" />
                     </Button>
@@ -218,7 +217,7 @@ const Testimonials = () => {
 
                   {/* Quote */}
                   <div className="relative mb-8">
-                    <Quote className="absolute -top-2 -left-2 w-8 h-8 text-[#4fbe99]/20" />
+                    <Quote className="absolute -top-2 -left-2 w-8 h-8 text-[#d62332]/20" />
                     <p className="text-lg lg:text-xl text-gray-700 leading-relaxed italic pl-6">
                       "{currentData.text}"
                     </p>
@@ -233,7 +232,7 @@ const Testimonials = () => {
                     />
                     <div>
                       <h4 className="text-xl font-bold text-gray-900">{currentData.name}</h4>
-                      <p className="text-[#4fbe99] font-semibold">
+                      <p className="text-[#d62332] font-semibold">
                         {currentData.role} at {currentData.company}
                       </p>
                     </div>
@@ -241,16 +240,16 @@ const Testimonials = () => {
 
                   {/* Results */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-[#4fbe99]/5 rounded-2xl p-4">
+                    <div className="bg-[#d62332]/5 rounded-2xl p-4">
                       <div className="flex items-center space-x-2 mb-1">
-                        <CheckCircle className="w-4 h-4 text-[#4fbe99]" />
+                        <CheckCircle className="w-4 h-4 text-[#d62332]" />
                         <span className="text-sm font-semibold text-gray-900">Outcome</span>
                       </div>
                       <p className="text-sm text-gray-700">{currentData.outcome}</p>
                     </div>
-                    <div className="bg-[#3da582]/5 rounded-2xl p-4">
+                    <div className="bg-[#b51d2a]/5 rounded-2xl p-4">
                       <div className="flex items-center space-x-2 mb-1">
-                        <Users className="w-4 h-4 text-[#3da582]" />
+                        <Users className="w-4 h-4 text-[#b51d2a]" />
                         <span className="text-sm font-semibold text-gray-900">Sessions</span>
                       </div>
                       <p className="text-sm text-gray-700">{currentData.sessions}</p>
@@ -267,7 +266,7 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="rounded-full border-[#4fbe99]/30 text-[#4fbe99] hover:bg-[#4fbe99] hover:text-white transition-all duration-300"
+              className="rounded-full border-[#d62332]/30 text-[#d62332] hover:bg-[#d62332] hover:text-white transition-all duration-300"
             >
               <ChevronLeft className="w-5 h-5" />
             </Button>
@@ -281,7 +280,7 @@ const Testimonials = () => {
                     setIsAutoPlaying(false)
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? "bg-[#4fbe99] w-8" : "bg-gray-300 hover:bg-[#4fbe99]/50"
+                    index === currentTestimonial ? "bg-[#d62332] w-8" : "bg-gray-300 hover:bg-[#d62332]/50"
                   }`}
                 />
               ))}
@@ -291,34 +290,12 @@ const Testimonials = () => {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="rounded-full border-[#4fbe99]/30 text-[#4fbe99] hover:bg-[#4fbe99] hover:text-white transition-all duration-300"
+              className="rounded-full border-[#d62332]/30 text-[#d62332] hover:bg-[#d62332] hover:text-white transition-all duration-300"
             >
               <ChevronRight className="w-5 h-5" />
             </Button>
           </div>
         </div>
-
-        {/* Stats Section */}
-        {/* <div className="bg-gradient-to-r from-[#4fbe99] to-[#3da582] rounded-3xl p-12 shadow-2xl">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">Our Impact in Numbers</h3>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              These results speak to the effectiveness of our personalized career counseling approach.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <div className="text-white">{stat.icon}</div>
-                </div>
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-white/80 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div> */}
 
         {/* Testimonial Grid Preview */}
         <div className="mt-16">
@@ -342,7 +319,7 @@ const Testimonials = () => {
                     />
                     <div>
                       <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-sm text-[#4fbe99]">{testimonial.company}</p>
+                      <p className="text-sm text-[#d62332]">{testimonial.company}</p>
                     </div>
                   </div>
                   <div className="flex mb-3">
@@ -352,7 +329,7 @@ const Testimonials = () => {
                   </div>
                   <p className="text-sm text-gray-600 line-clamp-3">{testimonial.text}</p>
                   <div className="mt-4 pt-4 border-t border-gray-100">
-                    <Badge className="bg-[#4fbe99]/10 text-[#4fbe99] text-xs">{testimonial.category}</Badge>
+                    <Badge className="bg-[#d62332]/10 text-[#d62332] text-xs">{testimonial.category}</Badge>
                   </div>
                 </CardContent>
               </Card>

@@ -181,14 +181,10 @@ export default function GalleryPage() {
 
   const selectedImageData = selectedImage ? galleryImages.find((img) => img.id === selectedImage) : null
 
-  // Grid layout patterns for dynamic sizing
   const getGridClasses = (index, aspectRatio) => {
     const patterns = [
-      // Pattern 1: Large landscape + 2 portraits
       { landscape: "col-span-2 row-span-2", portrait: "col-span-1 row-span-2", square: "col-span-1 row-span-1" },
-      // Pattern 2: Portrait + 2 squares + landscape
       { portrait: "col-span-1 row-span-2", square: "col-span-1 row-span-1", landscape: "col-span-2 row-span-1" },
-      // Pattern 3: Large square + mixed
       { square: "col-span-2 row-span-2", landscape: "col-span-2 row-span-1", portrait: "col-span-1 row-span-2" },
     ]
 
@@ -198,60 +194,54 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Enhanced Hero Section */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Elements */}
         <div className="absolute inset-0" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-[#4fbe99]/10 to-transparent rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-[#3da582]/8 to-transparent rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#4fbe99]/3 via-transparent to-[#2d8a6b]/3 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-[#d62332]/10 to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-[#b51d2a]/8 to-transparent rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#d62332]/3 via-transparent to-[#b51d2a]/3 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Enhanced Left Content - Now comes first in DOM order */}
+            {/* Left Content */}
             <div className="space-y-6 lg:space-y-10 text-center lg:text-left order-1">
               <div className="space-y-6 lg:space-y-8">
-                {/* Enhanced Badge */}
                 <div className="inline-flex items-center">
-                  <Badge className="bg-gradient-to-r from-[#4fbe99]/15 to-[#3da582]/15 text-[#4fbe99] border border-[#4fbe99]/30 rounded-full px-4 sm:px-6 lg:px-8 py-2 text-sm sm:text-base lg:text-lg font-semibold backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Badge className="bg-gradient-to-r from-[#d62332]/15 to-[#b51d2a]/15 text-[#d62332] border border-[#d62332]/30 rounded-full px-4 sm:px-6 lg:px-8 py-2 text-sm sm:text-base lg:text-lg font-semibold backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <Camera className="w-4 h-4 sm:w-5 h-5 lg:w-6 h-6 mr-2 lg:mr-3" />
                     Visual Storytelling
                     <Star className="w-4 h-4 sm:w-5 h-5 ml-2 lg:ml-3 text-yellow-500 fill-current" />
                   </Badge>
                 </div>
 
-                {/* Enhanced Title with Animation */}
                 <div className="space-y-3 lg:space-y-4">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
                     <span className="text-gray-900 block animate-fade-in-up">Capturing</span>
-                    <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent block animate-fade-in-up animation-delay-200">
+                    <span className="bg-gradient-to-r from-[#d62332] via-[#b51d2a] to-[#a51a26] bg-clip-text text-transparent block animate-fade-in-up animation-delay-200">
                       Success
                     </span>
                     <span className="text-gray-900 block animate-fade-in-up animation-delay-400">Stories</span>
                   </h1>
 
-                  {/* Subtitle */}
                   <div className="flex items-center justify-center lg:justify-start space-x-2 lg:space-x-3 animate-fade-in-up animation-delay-600">
-                    <div className="w-8 lg:w-12 h-px bg-gradient-to-r from-[#4fbe99] to-[#3da582]"></div>
+                    <div className="w-8 lg:w-12 h-px bg-gradient-to-r from-[#d62332] to-[#b51d2a]"></div>
                     <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-medium">
                       Where Moments Become Milestones
                     </p>
-                    <div className="w-8 lg:w-12 h-px bg-gradient-to-r from-[#3da582] to-[#4fbe99]"></div>
+                    <div className="w-8 lg:w-12 h-px bg-gradient-to-r from-[#b51d2a] to-[#d62332]"></div>
                   </div>
                 </div>
 
-                {/* Enhanced Description */}
                 <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed max-w-xl lg:max-w-2xl mx-auto lg:mx-0 animate-fade-in-up animation-delay-800">
                   Journey through our visual chronicle of transformation, innovation, and triumph. Every image tells a
                   story of career evolution and human potential realized.
                 </p>
               </div>
 
-              {/* Enhanced Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 animate-fade-in-up animation-delay-1200 justify-center lg:justify-start">
                 <Button
                   size="lg"
-                  className="group bg-gradient-to-r from-[#4fbe99] to-[#3da582] text-white hover:shadow-2xl hover:shadow-[#4fbe99]/25 hover:scale-105 rounded-2xl px-6 sm:px-8 lg:px-10 py-4 lg:py-6 text-base lg:text-lg font-bold transition-all duration-500 border-0 relative overflow-hidden"
+                  className="group bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white hover:shadow-2xl hover:shadow-[#d62332]/25 hover:scale-105 rounded-2xl px-6 sm:px-8 lg:px-10 py-4 lg:py-6 text-base lg:text-lg font-bold transition-all duration-500 border-0 relative overflow-hidden"
                   onClick={() => document.getElementById("gallery-section")?.scrollIntoView({ behavior: "smooth" })}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -263,21 +253,19 @@ export default function GalleryPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="group border-2 border-gray-200 text-gray-700 hover:border-[#4fbe99] hover:text-[#4fbe99] hover:bg-[#4fbe99]/5 hover:scale-105 rounded-2xl px-6 sm:px-8 lg:px-10 py-4 lg:py-6 text-base lg:text-lg font-bold transition-all duration-500 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl"
+                  className="group border-2 border-gray-200 text-gray-700 hover:border-[#d62332] hover:text-[#d62332] hover:bg-[#d62332]/5 hover:scale-105 rounded-2xl px-6 sm:px-8 lg:px-10 py-4 lg:py-6 text-base lg:text-lg font-bold transition-all duration-500 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl"
                 >
                   <Play className="w-5 h-5 lg:w-6 h-6 mr-2 lg:mr-3" />
                   Watch Story
-                  <div className="w-2 h-2 bg-red-500 rounded-full ml-2 lg:ml-3 animate-pulse" />
+                  <div className="w-2 h-2 bg-[#d62332] rounded-full ml-2 lg:ml-3 animate-pulse" />
                 </Button>
               </div>
             </div>
 
-            {/* Enhanced Right Content - Responsive Image Grid - Now comes second in DOM order */}
+            {/* Right Content */}
             <div className="relative flex justify-center order-2 lg:order-2 animate-fade-in-up animation-delay-600">
               <div className="relative">
-                {/* Responsive Grid Container */}
                 <div className="grid grid-cols-6 grid-rows-6 sm:grid-rows-8 gap-2 sm:gap-3 w-[320px] h-[400px] sm:w-[400px] sm:h-[500px] lg:w-[480px] lg:h-[600px]">
-                  {/* Large featured image - Hero focal point */}
                   <div
                     className="col-span-4 row-span-3 sm:row-span-4 relative group cursor-pointer transform hover:scale-105 transition-all duration-700 hover:z-10"
                     onClick={() => openLightbox(galleryImages[0].id)}
@@ -295,7 +283,6 @@ export default function GalleryPage() {
                     </div>
                   </div>
 
-                  {/* Top right portrait */}
                   <div
                     className="col-span-2 row-span-3 sm:row-span-4 relative group cursor-pointer transform hover:scale-105 transition-all duration-700"
                     onClick={() => openLightbox(galleryImages[1]?.id)}
@@ -310,7 +297,6 @@ export default function GalleryPage() {
                     </div>
                   </div>
 
-                  {/* Bottom left square */}
                   <div
                     className="col-span-2 row-span-2 relative group cursor-pointer transform hover:scale-105 transition-all duration-700"
                     onClick={() => openLightbox(galleryImages[2]?.id)}
@@ -325,7 +311,6 @@ export default function GalleryPage() {
                     </div>
                   </div>
 
-                  {/* Bottom center square */}
                   <div
                     className="col-span-2 row-span-2 relative group cursor-pointer transform hover:scale-105 transition-all duration-700"
                     onClick={() => openLightbox(galleryImages[3]?.id)}
@@ -340,7 +325,6 @@ export default function GalleryPage() {
                     </div>
                   </div>
 
-                  {/* Bottom right with count overlay */}
                   <div
                     className="col-span-2 row-span-2 relative group cursor-pointer transform hover:scale-105 transition-all duration-700"
                     onClick={() => openLightbox(galleryImages[4]?.id)}
@@ -363,10 +347,9 @@ export default function GalleryPage() {
                   </div>
                 </div>
 
-                {/* Enhanced Floating Elements - Responsive */}
-                <div className="absolute -top-4 lg:-top-8 -right-4 lg:-right-8 w-16 h-16 lg:w-32 lg:h-32 bg-gradient-to-br from-[#4fbe99]/20 to-[#3da582]/20 rounded-full blur-xl lg:blur-2xl animate-pulse" />
-                <div className="absolute -bottom-6 lg:-bottom-12 -left-6 lg:-left-12 w-20 h-20 lg:w-40 lg:h-40 bg-gradient-to-tr from-[#2d8a6b]/15 to-[#4fbe99]/15 rounded-full blur-2xl lg:blur-3xl animate-pulse delay-1000" />
-                <div className="absolute top-1/2 -left-3 lg:-left-6 w-2 h-2 lg:w-3 lg:h-3 bg-[#4fbe99] rounded-full" />
+                <div className="absolute -top-4 lg:-top-8 -right-4 lg:-right-8 w-16 h-16 lg:w-32 lg:h-32 bg-gradient-to-br from-[#d62332]/20 to-[#b51d2a]/20 rounded-full blur-xl lg:blur-2xl animate-pulse" />
+                <div className="absolute -bottom-6 lg:-bottom-12 -left-6 lg:-left-12 w-20 h-20 lg:w-40 lg:h-40 bg-gradient-to-tr from-[#a51a26]/15 to-[#d62332]/15 rounded-full blur-2xl lg:blur-3xl animate-pulse delay-1000" />
+                <div className="absolute top-1/2 -left-3 lg:-left-6 w-2 h-2 lg:w-3 lg:h-3 bg-[#d62332] rounded-full" />
               </div>
             </div>
           </div>
@@ -377,7 +360,6 @@ export default function GalleryPage() {
       <section className="relative py-8 lg:py-12 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           <div className="flex flex-col gap-4 lg:gap-6">
-            {/* Search - Full width on mobile */}
             <div className="relative w-full lg:max-w-md">
               <Search className="absolute left-3 lg:left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 lg:w-5 lg:h-5 text-gray-400" />
               <input
@@ -385,12 +367,11 @@ export default function GalleryPage() {
                 placeholder="Search photos..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 lg:pl-12 pr-3 lg:pr-4 py-3 lg:py-4 border border-gray-200 rounded-xl lg:rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4fbe99] focus:border-transparent bg-gray-50 shadow-sm transition-all duration-300 hover:bg-white text-sm lg:text-base"
+                className="w-full pl-10 lg:pl-12 pr-3 lg:pr-4 py-3 lg:py-4 border border-gray-200 rounded-xl lg:rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d62332] focus:border-transparent bg-gray-50 shadow-sm transition-all duration-300 hover:bg-white text-sm lg:text-base"
               />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 items-center justify-between">
-              {/* Category Filters - Scrollable on mobile */}
               <div className="flex gap-2 lg:gap-3 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto scrollbar-hide">
                 {categories.map((category) => (
                   <Button
@@ -399,8 +380,8 @@ export default function GalleryPage() {
                     variant={selectedCategory === category.id ? "default" : "outline"}
                     className={`rounded-full px-3 sm:px-4 lg:px-6 py-2 lg:py-3 transition-all duration-300 whitespace-nowrap text-xs sm:text-sm lg:text-base ${
                       selectedCategory === category.id
-                        ? "bg-gradient-to-r from-[#4fbe99] to-[#3da582] text-white shadow-lg border-0"
-                        : "border-gray-200 text-gray-600 hover:border-[#4fbe99] hover:text-[#4fbe99] hover:scale-105 hover:shadow-md"
+                        ? "bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white shadow-lg border-0"
+                        : "border-gray-200 text-gray-600 hover:border-[#d62332] hover:text-[#d62332] hover:scale-105 hover:shadow-md"
                     }`}
                   >
                     {category.label}
@@ -409,7 +390,6 @@ export default function GalleryPage() {
                 ))}
               </div>
 
-              {/* View Mode Toggle */}
               <div className="flex items-center space-x-1 lg:space-x-2 bg-gray-50 rounded-xl lg:rounded-2xl p-1 lg:p-1.5 shadow-sm border border-gray-100">
                 <Button
                   onClick={() => setViewMode("masonry")}
@@ -417,8 +397,8 @@ export default function GalleryPage() {
                   size="sm"
                   className={`rounded-lg lg:rounded-xl transition-all duration-300 p-2 lg:p-2.5 ${
                     viewMode === "masonry"
-                      ? "bg-gradient-to-r from-[#4fbe99] to-[#3da582] text-white shadow-md"
-                      : "text-gray-600 hover:text-[#4fbe99] hover:bg-white"
+                      ? "bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white shadow-md"
+                      : "text-gray-600 hover:text-[#d62332] hover:bg-white"
                   }`}
                 >
                   <Grid3X3 className="w-3 h-3 lg:w-4 lg:h-4" />
@@ -429,8 +409,8 @@ export default function GalleryPage() {
                   size="sm"
                   className={`rounded-lg lg:rounded-xl transition-all duration-300 p-2 lg:p-2.5 ${
                     viewMode === "grid"
-                      ? "bg-gradient-to-r from-[#4fbe99] to-[#3da582] text-white shadow-md"
-                      : "text-gray-600 hover:text-[#4fbe99] hover:bg-white"
+                      ? "bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white shadow-md"
+                      : "text-gray-600 hover:text-[#d62332] hover:bg-white"
                   }`}
                 >
                   <List className="w-3 h-3 lg:w-4 lg:h-4" />
@@ -441,7 +421,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Enhanced Gallery Grid */}
+      {/* Gallery Grid */}
       <section id="gallery-section" className="relative py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
           {filteredImages.length === 0 ? (
@@ -491,10 +471,8 @@ export default function GalleryPage() {
                       loading="lazy"
                     />
 
-                    {/* Minimal hover overlay - no text */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500" />
 
-                    {/* Action Buttons - Only on hover */}
                     <div className="absolute top-2 lg:top-4 right-2 lg:right-4 flex space-x-1 lg:space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                       <Button
                         size="sm"
@@ -522,8 +500,7 @@ export default function GalleryPage() {
                       </Button>
                     </div>
 
-                    {/* Category Badge - Only visible on hover */}
-                    <Badge className="absolute top-2 lg:top-4 left-2 lg:left-4 bg-gradient-to-r from-[#4fbe99]/90 to-[#3da582]/90 text-white border-0 backdrop-blur-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs lg:text-sm">
+                    <Badge className="absolute top-2 lg:top-4 left-2 lg:left-4 bg-gradient-to-r from-[#d62332]/90 to-[#b51d2a]/90 text-white border-0 backdrop-blur-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs lg:text-sm">
                       {categories.find((cat) => cat.id === image.category)?.label}
                     </Badge>
                   </div>
@@ -534,11 +511,10 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox */}
       {selectedImage && selectedImageData && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4">
           <div className="relative max-w-6xl max-h-full w-full">
-            {/* Close Button */}
             <Button
               onClick={closeLightbox}
               className="absolute top-2 sm:top-4 right-2 sm:right-4 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full p-0 bg-white/10 text-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
@@ -546,7 +522,6 @@ export default function GalleryPage() {
               <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </Button>
 
-            {/* Navigation Buttons */}
             <Button
               onClick={() => navigateLightbox("prev")}
               className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full p-0 bg-white/10 text-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm"
@@ -560,7 +535,6 @@ export default function GalleryPage() {
               <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7" />
             </Button>
 
-            {/* Image */}
             <div className="flex items-center justify-center h-full">
               <img
                 src={selectedImageData.src || "/placeholder.svg"}
@@ -569,7 +543,6 @@ export default function GalleryPage() {
               />
             </div>
 
-            {/* Image Info */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent text-white p-4 sm:p-6 lg:p-8 rounded-b-xl sm:rounded-b-2xl backdrop-blur-sm">
               <div className="max-w-4xl mx-auto">
                 <div className="flex flex-col gap-4 sm:gap-6">

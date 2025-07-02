@@ -258,11 +258,10 @@ const CleanCTA = () => {
   return (
     <section className="py-10 bg-gradient-to-b from-white to-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Card className="relative border-0 shadow-2xl rounded-3xl bg-gradient-to-br from-[#4fbe99] to-[#3da582] overflow-hidden group hover:shadow-3xl transition-all duration-500">
+        <Card className="relative border-0 shadow-2xl rounded-3xl bg-gradient-to-br from-[#d62332] to-[#b51d2a] overflow-hidden group hover:shadow-3xl transition-all duration-500">
           {/* Subtle Pattern Overlay */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50 pointer-events-none z-0"></div>
 
-          
           {/* Floating Elements */}
           <div className="absolute top-8 right-8 w-16 h-16 bg-white/10 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute bottom-8 left-8 w-12 h-12 bg-white/10 rounded-full blur-lg animate-pulse delay-1000"></div>
@@ -302,7 +301,7 @@ const CleanCTA = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button
                   size="lg"
-                  className="group relative rounded-2xl bg-white text-[#4fbe99] hover:bg-gray-50 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 px-10 py-7 text-lg font-bold overflow-hidden"
+                  className="group relative rounded-2xl bg-white text-[#d62332] hover:bg-gray-50 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 px-10 py-7 text-lg font-bold overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   <Calendar className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" />
@@ -348,14 +347,14 @@ const CleanCTA = () => {
         <div className="relative">
           <div className="absolute -top-6 -left-6 transform rotate-12 animate-float">
             <div className="bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
-              <div className="text-2xl font-bold text-[#4fbe99]">95%</div>
+              <div className="text-2xl font-bold text-[#d62332]">95%</div>
               <div className="text-xs text-gray-600 font-medium">Success Rate</div>
             </div>
           </div>
           
           <div className="absolute -top-6 -right-6 transform -rotate-12 animate-float-delayed">
             <div className="bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
-              <div className="text-2xl font-bold text-[#4fbe99]">24h</div>
+              <div className="text-2xl font-bold text-[#d62332]">24h</div>
               <div className="text-xs text-gray-600 font-medium">Response Time</div>
             </div>
           </div>

@@ -43,7 +43,7 @@ export default function ImpactPage() {
       label: "Careers Transformed",
       description: "Professionals who found their dream careers",
       icon: <Users className="w-8 h-8" />,
-      color: "from-[#4fbe99] to-[#3da582]",
+      color: "from-[#d62332] to-[#b51d2a]",
     },
     {
       number: 95,
@@ -51,7 +51,7 @@ export default function ImpactPage() {
       label: "Success Rate",
       description: "Clients who achieved their career goals",
       icon: <Target className="w-8 h-8" />,
-      color: "from-[#3da582] to-[#2d8a6b]",
+      color: "from-[#b51d2a] to-[#a51a26]",
     },
     {
       number: 15,
@@ -59,7 +59,7 @@ export default function ImpactPage() {
       label: "Countries Served",
       description: "Global reach across continents",
       icon: <Globe className="w-8 h-8" />,
-      color: "from-[#2d8a6b] to-[#4fbe99]",
+      color: "from-[#a51a26] to-[#d62332]",
     },
     {
       number: 150,
@@ -67,7 +67,7 @@ export default function ImpactPage() {
       label: "Average Salary Increase",
       description: "Career advancement results",
       icon: <TrendingUp className="w-8 h-8" />,
-      color: "from-[#4fbe99] to-[#3da582]",
+      color: "from-[#d62332] to-[#b51d2a]",
     },
     {
       number: 25,
@@ -75,7 +75,7 @@ export default function ImpactPage() {
       label: "Industry Awards",
       description: "Recognition for excellence",
       icon: <Award className="w-8 h-8" />,
-      color: "from-[#3da582] to-[#2d8a6b]",
+      color: "from-[#b51d2a] to-[#a51a26]",
     },
     {
       number: 4.9,
@@ -83,7 +83,7 @@ export default function ImpactPage() {
       label: "Client Satisfaction",
       description: "Average rating from reviews",
       icon: <Star className="w-8 h-8" />,
-      color: "from-[#2d8a6b] to-[#4fbe99]",
+      color: "from-[#a51a26] to-[#d62332]",
     },
   ]
 
@@ -126,35 +126,35 @@ export default function ImpactPage() {
       percentage: 35,
       placements: "17,500+",
       icon: <Zap className="w-6 h-6" />,
-      color: "from-[#4fbe99] to-[#3da582]",
+      color: "from-[#d62332] to-[#b51d2a]",
     },
     {
       title: "Healthcare",
       percentage: 20,
       placements: "10,000+",
       icon: <Heart className="w-6 h-6" />,
-      color: "from-[#3da582] to-[#2d8a6b]",
+      color: "from-[#b51d2a] to-[#a51a26]",
     },
     {
       title: "Finance",
       percentage: 18,
       placements: "9,000+",
       icon: <DollarSign className="w-6 h-6" />,
-      color: "from-[#2d8a6b] to-[#4fbe99]",
+      color: "from-[#a51a26] to-[#d62332]",
     },
     {
       title: "Education",
       percentage: 15,
       placements: "7,500+",
       icon: <GraduationCap className="w-6 h-6" />,
-      color: "from-[#4fbe99] to-[#3da582]",
+      color: "from-[#d62332] to-[#b51d2a]",
     },
     {
       title: "Consulting",
       percentage: 12,
       placements: "6,000+",
       icon: <Building className="w-6 h-6" />,
-      color: "from-[#3da582] to-[#2d8a6b]",
+      color: "from-[#b51d2a] to-[#a51a26]",
     },
   ]
 
@@ -223,7 +223,7 @@ export default function ImpactPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
           <div className="text-center text-white space-y-8">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-8 py-2 text-lg font-semibold backdrop-blur-sm">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-8 py-2 text-lg font-semibold backdrop-blur-sm">
               <Trophy className="w-5 h-5 mr-3" />
               Our Impact & Results
               <Sparkles className="w-5 h-5 ml-3" />
@@ -231,7 +231,7 @@ export default function ImpactPage() {
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="block text-black">Transforming Lives</span>
-              <span className="block bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">Across the Globe</span>
+              <span className="block bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">Across the Globe</span>
             </h1>
 
             <p className="text-xl lg:text-2xl text-black/90 font-light leading-relaxed max-w-4xl mx-auto">
@@ -242,7 +242,7 @@ export default function ImpactPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] text-white hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
+                className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] text-white hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
               >
                 <BarChart3 className="w-5 h-5 mr-3" />
                 View Success Stories
@@ -250,7 +250,7 @@ export default function ImpactPage() {
               </Button>
               <Button
                 size="lg"
-                className="border-2 border-[#4fbe99] text-[#4fbe99] hover:text-[#4fbe99] hover:bg-white hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-[#d62332] text-[#d62332] hover:text-[#d62332] hover:bg-white hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
               >
                 <Calendar className="w-5 h-5 mr-3" />
                 Join Our Impact
@@ -264,12 +264,12 @@ export default function ImpactPage() {
       <section ref={statsRef} className="relative py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-3 text-base font-medium mb-6">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-3 text-base font-medium mb-6">
               <BarChart3 className="w-5 h-5 mr-2" />
               Impact by Numbers
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
                 Measurable Results
               </span>
             </h2>
@@ -302,7 +302,7 @@ export default function ImpactPage() {
                     <div
                       className={`w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${stat.color} bg-opacity-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
                     >
-                      <div className={`text-[#4fbe99]`}>{stat.icon}</div>
+                      <div className={`text-[#d62332]`}>{stat.icon}</div>
                     </div>
 
                     {/* Number */}
@@ -313,7 +313,7 @@ export default function ImpactPage() {
                         {animatedNumbers[index] || 0}
                         {stat.suffix}
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#4fbe99] transition-colors duration-300">
+                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#d62332] transition-colors duration-300">
                         {stat.label}
                       </h3>
                     </div>
@@ -349,14 +349,14 @@ export default function ImpactPage() {
       <section className="relative py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-3 text-base font-medium mb-6">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-3 text-base font-medium mb-6">
               <ThumbsUp className="w-5 h-5 mr-2" />
               Success Stories
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
               <span className="text-gray-900">Real People,</span>
               <br />
-              <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
                 Real Transformations
               </span>
             </h2>
@@ -375,9 +375,9 @@ export default function ImpactPage() {
                   <div className="space-y-6">
                     {/* Profile */}
                     <div className="flex items-center space-x-4">
-                      <Avatar className="w-16 h-16 ring-4 ring-[#4fbe99]/20">
+                      <Avatar className="w-16 h-16 ring-4 ring-[#d62332]/20">
                         <AvatarImage src={story.image || "/placeholder.svg"} />
-                        <AvatarFallback className="bg-gradient-to-r from-[#4fbe99] to-[#3da582] text-white font-bold">
+                        <AvatarFallback className="bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white font-bold">
                           {story.name
                             .split(" ")
                             .map((n) => n[0])
@@ -386,19 +386,19 @@ export default function ImpactPage() {
                       </Avatar>
                       <div>
                         <h3 className="text-lg font-bold text-gray-900">{story.name}</h3>
-                        <p className="text-[#4fbe99] font-semibold">{story.role}</p>
+                        <p className="text-[#d62332] font-semibold">{story.role}</p>
                         <p className="text-sm text-gray-500">Previously: {story.previousRole}</p>
                       </div>
                     </div>
 
                     {/* Transformation Metrics */}
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center p-4 bg-gradient-to-r from-[#4fbe99]/5 to-[#3da582]/5 rounded-2xl">
-                        <div className="text-2xl font-bold text-[#4fbe99]">{story.timeframe}</div>
+                      <div className="text-center p-4 bg-gradient-to-r from-[#d62332]/5 to-[#b51d2a]/5 rounded-2xl">
+                        <div className="text-2xl font-bold text-[#d62332]">{story.timeframe}</div>
                         <div className="text-sm text-gray-600">Transition Time</div>
                       </div>
-                      <div className="text-center p-4 bg-gradient-to-r from-[#3da582]/5 to-[#2d8a6b]/5 rounded-2xl">
-                        <div className="text-2xl font-bold text-[#3da582]">{story.salaryIncrease}</div>
+                      <div className="text-center p-4 bg-gradient-to-r from-[#b51d2a]/5 to-[#a51a26]/5 rounded-2xl">
+                        <div className="text-2xl font-bold text-[#b51d2a]">{story.salaryIncrease}</div>
                         <div className="text-sm text-gray-600">Salary Increase</div>
                       </div>
                     </div>
@@ -407,17 +407,17 @@ export default function ImpactPage() {
                     <p className="text-gray-600 leading-relaxed">{story.story}</p>
 
                     {/* Quote */}
-                    <Card className="bg-gradient-to-r from-[#4fbe99]/5 to-[#3da582]/5 border-l-4 border-l-[#4fbe99] border-0">
+                    <Card className="bg-gradient-to-r from-[#d62332]/5 to-[#b51d2a]/5 border-l-4 border-l-[#d62332] border-0">
                       <CardContent className="p-4">
                         <div className="flex items-start space-x-3">
-                          <Quote className="w-5 h-5 text-[#4fbe99] flex-shrink-0 mt-1" />
+                          <Quote className="w-5 h-5 text-[#d62332] flex-shrink-0 mt-1" />
                           <p className="text-gray-700 italic text-sm leading-relaxed">{story.quote}</p>
                         </div>
                       </CardContent>
                     </Card>
 
                     {/* Success Indicator */}
-                    <div className="flex items-center justify-center space-x-2 text-[#4fbe99]">
+                    <div className="flex items-center justify-center space-x-2 text-[#d62332]">
                       <CheckCircle className="w-5 h-5" />
                       <span className="font-semibold">Career Transformation Complete</span>
                     </div>
@@ -436,12 +436,12 @@ export default function ImpactPage() {
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
+                <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
                   <PieChart className="w-5 h-5 mr-2" />
                   Industry Distribution
                 </Badge>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
                     Sector Impact
                   </span>
                   <br />
@@ -461,7 +461,7 @@ export default function ImpactPage() {
                         <div
                           className={`w-10 h-10 rounded-xl bg-gradient-to-r ${industry.color} bg-opacity-10 flex items-center justify-center`}
                         >
-                          <div className="text-[#4fbe99]">{industry.icon}</div>
+                          <div className="text-[#d62332]">{industry.icon}</div>
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900">{industry.title}</h3>
@@ -469,7 +469,7 @@ export default function ImpactPage() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-[#4fbe99]">{industry.percentage}%</div>
+                        <div className="text-2xl font-bold text-[#d62332]">{industry.percentage}%</div>
                       </div>
                     </div>
                     <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
@@ -485,7 +485,7 @@ export default function ImpactPage() {
 
             {/* Right Content - Visual */}
             <div className="relative">
-              <Card className="border-0 shadow-2xl bg-gradient-to-br from-[#4fbe99]/5 to-[#3da582]/5 rounded-3xl overflow-hidden">
+              <Card className="border-0 shadow-2xl bg-gradient-to-br from-[#d62332]/5 to-[#b51d2a]/5 rounded-3xl overflow-hidden">
                 <CardContent className="p-12">
                   <div className="text-center space-y-8">
                     <div className="relative w-64 h-64 mx-auto">
@@ -524,8 +524,8 @@ export default function ImpactPage() {
                         <defs>
                           {industryImpact.map((industry, index) => (
                             <linearGradient key={index} id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                              <stop offset="0%" stopColor="#4fbe99" />
-                              <stop offset="100%" stopColor="#3da582" />
+                              <stop offset="0%" stopColor="#d62332" />
+                              <stop offset="100%" stopColor="#b51d2a" />
                             </linearGradient>
                           ))}
                         </defs>
@@ -534,7 +534,7 @@ export default function ImpactPage() {
                       {/* Center Content */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-[#4fbe99]">50K+</div>
+                          <div className="text-3xl font-bold text-[#d62332]">50K+</div>
                           <div className="text-sm text-gray-600">Total Placements</div>
                         </div>
                       </div>
@@ -558,14 +558,14 @@ export default function ImpactPage() {
       <section className="relative py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
               <Globe className="w-5 h-5 mr-2" />
               Global Presence
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
               <span className="text-gray-900">Worldwide</span>
               <br />
-              <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
                 Career Impact
               </span>
             </h2>
@@ -584,21 +584,21 @@ export default function ImpactPage() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <MapPin className="w-6 h-6 text-[#4fbe99]" />
+                        <MapPin className="w-6 h-6 text-[#d62332]" />
                         <h3 className="font-semibold text-gray-900">{location.country}</h3>
                       </div>
-                      <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20">
+                      <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20">
                         {location.growth}
                       </Badge>
                     </div>
 
                     <div className="text-center py-4">
-                      <div className="text-3xl font-bold text-[#4fbe99] mb-1">{location.clients}</div>
+                      <div className="text-3xl font-bold text-[#d62332] mb-1">{location.clients}</div>
                       <div className="text-sm text-gray-600">Clients Served</div>
                     </div>
 
                     <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-[#4fbe99] to-[#3da582] rounded-full w-full transition-all duration-1000"></div>
+                      <div className="h-full bg-gradient-to-r from-[#d62332] to-[#b51d2a] rounded-full w-full transition-all duration-1000"></div>
                     </div>
                   </div>
                 </CardContent>
@@ -609,7 +609,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Call to Action */}
-      {/* <section className="relative py-20 max-w-7xl bg-gradient-to-r from-[#4fbe99] to-[#3da582]">
+      <section className="relative py-20 bg-gradient-to-r from-[#d62332] to-[#b51d2a]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="space-y-8">
             <div className="flex justify-center">
@@ -623,14 +623,14 @@ export default function ImpactPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button
                 size="lg"
-                className="bg-white text-[#4fbe99] hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
+                className="bg-white text-[#d62332] hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
               >
                 <Calendar className="w-5 h-5 mr-3" />
                 Start Your Transformation
               </Button>
               <Button
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#4fbe99] hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#d62332] hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
               >
                 <BookOpen className="w-5 h-5 mr-3" />
                 Learn More
@@ -638,7 +638,8 @@ export default function ImpactPage() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
+      <br /><br />
     </div>
   )
 }

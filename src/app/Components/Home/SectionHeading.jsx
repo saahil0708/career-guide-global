@@ -1,14 +1,14 @@
 import { GraduationCap } from "lucide-react";
 
-export default function sectionHeading() {
+export default function SectionHeading() {
     return (
         <>
             <div className="flex justify-center mb-8">
-                <div className="inline-flex items-center gap-1 px-6 py-2 bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-1 border-[#4fbe99]/20 rounded-full">
+                <div className="inline-flex items-center gap-1 px-6 py-2 bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-1 border-[#d62332]/20 rounded-full">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full">
-                        <GraduationCap className="w-4 h-4 text-[#4fbe99]" />
+                        <GraduationCap className="w-4 h-4 text-[#d62332]" />
                     </div>
-                    <span className="text-sm font-medium text-[#4fbe99]">Trusted Educational Partners</span>
+                    <span className="text-sm font-medium text-[#d62332]">Trusted Educational Partners</span>
                 </div>
             </div>
 
@@ -19,7 +19,7 @@ export default function sectionHeading() {
                         Partner Colleges &
                     </span>
                     {/* <br /> */}
-                    <span className="text-[#4fbe99]">
+                    <span className="text-[#d62332]">
                         {` Universities`}
                     </span>
                 </h2>
@@ -29,19 +29,19 @@ export default function sectionHeading() {
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mt-8">
                     <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#4fbe99] rounded-full"></div>
+                        <div className="w-2 h-2 bg-[#d62332] rounded-full"></div>
                         <span>150+ Partner Institutions</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#4fbe99] rounded-full"></div>
+                        <div className="w-2 h-2 bg-[#d62332] rounded-full"></div>
                         <span>500K+ Students Supported</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#4fbe99] rounded-full"></div>
+                        <div className="w-2 h-2 bg-[#d62332] rounded-full"></div>
                         <span>24/7 Counselling Access</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#4fbe99] rounded-full"></div>
+                        <div className="w-2 h-2 bg-[#d62332] rounded-full"></div>
                         <span>98% Student Satisfaction</span>
                     </div>
                 </div>

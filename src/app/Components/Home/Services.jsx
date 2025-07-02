@@ -35,7 +35,7 @@ const ServicesPreview = () => {
       sessions: "4-6 sessions",
       duration: "45 mins each",
       badge: "Most Popular",
-      color: "from-[#4fbe99] to-[#3da582]",
+      color: "from-[#d62332] to-[#b51d2a]",
     },
     {
       id: 2,
@@ -52,7 +52,7 @@ const ServicesPreview = () => {
       sessions: "Weekly sessions",
       duration: "2 hours each",
       badge: "Interactive",
-      color: "from-[#3da582] to-[#2d8a6b]",
+      color: "from-[#b51d2a] to-[#a51a26]",
     },
     {
       id: 3,
@@ -64,7 +64,7 @@ const ServicesPreview = () => {
       sessions: "3-4 sessions",
       duration: "60 mins each",
       badge: "For Students",
-      color: "from-[#4fbe99] to-[#5cc9a3]",
+      color: "from-[#d62332] to-[#c51f2e]",
     },
     {
       id: 4,
@@ -76,7 +76,7 @@ const ServicesPreview = () => {
       sessions: "6-8 sessions",
       duration: "60 mins each",
       badge: "Advanced",
-      color: "from-[#2d8a6b] to-[#4fbe99]",
+      color: "from-[#a51a26] to-[#d62332]",
     },
   ]
 
@@ -114,15 +114,15 @@ const ServicesPreview = () => {
     <section className="py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 -right-20 w-80 h-80 bg-[#4fbe99]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 -left-20 w-96 h-96 bg-[#3da582]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 -right-20 w-80 h-80 bg-[#d62332]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 -left-20 w-96 h-96 bg-[#b51d2a]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-3 text-sm font-medium">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-3 text-sm font-medium">
               <Heart className="w-4 h-4 mr-2" />
               Career Counseling Services
             </Badge>
@@ -133,7 +133,7 @@ const ServicesPreview = () => {
               Professional Career
             </span>
             <br />
-            <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
               Counseling Services
             </span>
           </h2>
@@ -152,8 +152,8 @@ const ServicesPreview = () => {
               className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl bg-white/80 backdrop-blur-sm"
             >
               <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-[#4fbe99]">{area.icon}</div>
+                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-[#d62332]">{area.icon}</div>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{area.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{area.description}</p>
@@ -163,7 +163,7 @@ const ServicesPreview = () => {
         </div>
 
         {/* Main Services */}
-        {/* <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {services.map((service) => (
             <Card
               key={service.id}
@@ -173,7 +173,7 @@ const ServicesPreview = () => {
             >
               <CardContent className="p-8">
                 {/* Service Badge */}
-                {/* <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center justify-between mb-6">
                   <Badge
                     className={`bg-gradient-to-r ${service.color} text-white border-0 rounded-full px-4 py-2 text-sm font-medium`}
                   >
@@ -189,9 +189,9 @@ const ServicesPreview = () => {
                       <span className="text-sm font-medium">{service.duration}</span>
                     </div>
                   </div>
-                </div> */} 
+                </div>
 
-                {/* Service Header
+                {/* Service Header */}
                 <div className="flex items-start space-x-4 mb-6">
                   <div
                     className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}
@@ -202,42 +202,42 @@ const ServicesPreview = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{service.description}</p>
                   </div>
-                </div> */}
+                </div>
 
-                {/* Service Features
+                {/* Service Features */}
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">What We Cover</h4>
                   <div className="grid grid-cols-1 gap-2">
                     {service.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="w-4 h-4 text-[#4fbe99] flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-[#d62332] flex-shrink-0" />
                         <span className="text-sm text-gray-700 font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
-                </div> */}
+                </div>
 
                 {/* CTA */}
-                {/* <div className="pt-6 border-t border-gray-100">
+                <div className="pt-6 border-t border-gray-100">
                   <Button
                     className={`w-full rounded-2xl bg-gradient-to-r ${service.color} hover:shadow-xl transition-all duration-300 hover:scale-105 py-3 text-white font-semibold group`}
                   >
                     Schedule Consultation
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
-                </div> */}
+                </div>
 
                 {/* Hover Effect Overlay */}
-                {/* <div
+                <div
                   className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}
                 ></div>
               </CardContent>
             </Card>
           ))}
-        </div> */}
+        </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-[#4fbe99] to-[#3da582] rounded-3xl p-12 shadow-2xl">
+        <div className="bg-gradient-to-r from-[#d62332] to-[#b51d2a] rounded-3xl p-12 shadow-2xl">
           <div className="text-center mb-12">
             <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">Our Counseling Impact</h3>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
@@ -263,12 +263,12 @@ const ServicesPreview = () => {
         <div className="text-center mt-16">
           <p className="text-lg text-gray-600 mb-6">
             Ready to take the next step in your career journey?{" "}
-            <span className="text-[#4fbe99] font-semibold">Let's explore your possibilities together.</span>
+            <span className="text-[#d62332] font-semibold">Let's explore your possibilities together.</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="rounded-2xl bg-gradient-to-r from-[#4fbe99] to-[#3da582] hover:from-[#3da582] hover:to-[#2d8a6b] text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 px-8 py-6 text-lg font-semibold"
+              className="rounded-2xl bg-gradient-to-r from-[#d62332] to-[#b51d2a] hover:from-[#c51f2e] hover:to-[#a51a26] text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 px-8 py-6 text-lg font-semibold"
             >
               <Calendar className="w-5 h-5 mr-3" />
               Book Free Consultation
@@ -277,7 +277,7 @@ const ServicesPreview = () => {
             <Button
               variant="outline"
               size="lg"
-              className="rounded-2xl border-2 border-[#4fbe99] text-[#4fbe99] hover:bg-[#4fbe99] hover:text-white transition-all duration-300 px-8 py-6 text-lg font-semibold"
+              className="rounded-2xl border-2 border-[#d62332] text-[#d62332] hover:bg-[#d62332] hover:text-white transition-all duration-300 px-8 py-6 text-lg font-semibold"
             >
               <User className="w-5 h-5 mr-3" />
               Meet Our Counselors

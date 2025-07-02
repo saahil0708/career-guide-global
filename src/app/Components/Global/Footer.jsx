@@ -4,6 +4,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
+import Logo from '../../../Images/CCGL.png'
 import {
   MapPin,
   Phone,
@@ -98,8 +100,8 @@ const Footer = () => {
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#4fbe99]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#3da582]/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#d62332]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#b51d2a]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative">
@@ -109,7 +111,7 @@ const Footer = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-                  <span className="bg-gradient-to-r from-[#4fbe99] to-[#3da582] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#d62332] to-[#b51d2a] bg-clip-text text-transparent">
                     Stay Updated
                   </span>{" "}
                   on Career Insights
@@ -128,13 +130,13 @@ const Footer = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
-                      className="w-full px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4fbe99] focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#d62332] focus:border-transparent transition-all duration-300"
                       required
                     />
                   </div>
                   <Button
                     type="submit"
-                    className="rounded-2xl bg-gradient-to-r from-[#4fbe99] to-[#3da582] hover:from-[#3da582] hover:to-[#2d8a6b] text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 px-6 py-3 font-semibold"
+                    className="rounded-2xl bg-gradient-to-r from-[#d62332] to-[#b51d2a] hover:from-[#c51f2e] hover:to-[#a51a26] text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 px-6 py-3 font-semibold"
                   >
                     {isSubscribed ? (
                       <>
@@ -165,17 +167,13 @@ const Footer = () => {
             <div className="lg:col-span-2">
               {/* Logo */}
               <div className="flex items-center space-x-4 mb-6">
-                <div className="relative">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4fbe99] to-[#3da582] flex items-center justify-center shadow-xl">
-                    <div className="w-7 h-7 rounded-xl bg-white/90 flex items-center justify-center">
-                      <div className="w-4 h-4 rounded-lg bg-gradient-to-br from-[#4fbe99] to-[#3da582]"></div>
-                    </div>
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-[#4fbe99] to-[#3da582] rounded-full animate-pulse"></div>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-white">CareerGuide</h2>
-                  <p className="text-sm text-gray-400">Professional Counseling</p>
+                <div className="relative w-40 h-[115px]">
+                  <Image
+                    src={Logo}
+                    alt="Career Guide Global Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
 
@@ -189,7 +187,7 @@ const Footer = () => {
                 {quickStats.map((stat, index) => (
                   <div key={index} className="text-center p-3 bg-white/5 rounded-xl backdrop-blur-sm">
                     <div className="flex items-center justify-center space-x-1 mb-1">
-                      <div className="text-[#4fbe99]">{stat.icon}</div>
+                      <div className="text-[#d62332]">{stat.icon}</div>
                       <span className="text-lg font-bold text-white">{stat.number}</span>
                     </div>
                     <span className="text-xs text-gray-400">{stat.label}</span>
@@ -217,16 +215,16 @@ const Footer = () => {
               <div key={index} className="lg:col-span-1">
                 <h3 className="text-lg font-semibold text-white mb-6 relative">
                   {section.title}
-                  <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-[#4fbe99] to-[#3da582] rounded-full"></div>
+                  <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-[#d62332] to-[#b51d2a] rounded-full"></div>
                 </h3>
                 <ul className="space-y-3">
                   {section.links.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="group flex items-center space-x-3 text-gray-400 hover:text-[#4fbe99] transition-colors duration-300"
+                        className="group flex items-center space-x-3 text-gray-400 hover:text-[#d62332] transition-colors duration-300"
                       >
-                        <div className="text-gray-500 group-hover:text-[#4fbe99] transition-colors duration-300">
+                        <div className="text-gray-500 group-hover:text-[#d62332] transition-colors duration-300">
                           {link.icon}
                         </div>
                         <span className="text-sm">{link.name}</span>
@@ -245,8 +243,8 @@ const Footer = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-2xl">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#4fbe99]/20 to-[#3da582]/20 flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-[#4fbe99]" />
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#d62332]/20 to-[#b51d2a]/20 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-[#d62332]" />
                   </div>
                   <h4 className="font-semibold text-white mb-2">Visit Us</h4>
                   <p className="text-sm text-gray-400">
@@ -259,8 +257,8 @@ const Footer = () => {
 
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-2xl">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#4fbe99]/20 to-[#3da582]/20 flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-[#4fbe99]" />
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#d62332]/20 to-[#b51d2a]/20 flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-[#d62332]" />
                   </div>
                   <h4 className="font-semibold text-white mb-2">Call Us</h4>
                   <p className="text-sm text-gray-400">
@@ -273,8 +271,8 @@ const Footer = () => {
 
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-2xl">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#4fbe99]/20 to-[#3da582]/20 flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-[#4fbe99]" />
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#d62332]/20 to-[#b51d2a]/20 flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-[#d62332]" />
                   </div>
                   <h4 className="font-semibold text-white mb-2">Email Us</h4>
                   <p className="text-sm text-gray-400">
@@ -287,13 +285,13 @@ const Footer = () => {
 
               <Card className="bg-white/5 backdrop-blur-sm border-white/10 rounded-2xl">
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#4fbe99]/20 to-[#3da582]/20 flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-[#4fbe99]" />
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-r from-[#d62332]/20 to-[#b51d2a]/20 flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-[#d62332]" />
                   </div>
                   <h4 className="font-semibold text-white mb-2">Book Session</h4>
                   <Button
                     size="sm"
-                    className="rounded-xl bg-gradient-to-r from-[#4fbe99] to-[#3da582] hover:from-[#3da582] hover:to-[#2d8a6b] text-white text-xs px-4 py-2"
+                    className="rounded-xl bg-gradient-to-r from-[#d62332] to-[#b51d2a] hover:from-[#c51f2e] hover:to-[#a51a26] text-white text-xs px-4 py-2"
                   >
                     Schedule Now
                   </Button>
@@ -310,22 +308,22 @@ const Footer = () => {
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
                 <p className="text-sm text-gray-400">© 2024 CareerGuide. All rights reserved.</p>
                 <div className="flex items-center space-x-4 text-xs text-gray-500">
-                  <a href="/privacy" className="hover:text-[#4fbe99] transition-colors duration-300">
+                  <a href="/privacy" className="hover:text-[#d62332] transition-colors duration-300">
                     Privacy Policy
                   </a>
                   <span>•</span>
-                  <a href="/terms" className="hover:text-[#4fbe99] transition-colors duration-300">
+                  <a href="/terms" className="hover:text-[#d62332] transition-colors duration-300">
                     Terms of Service
                   </a>
                   <span>•</span>
-                  <a href="/cookies" className="hover:text-[#4fbe99] transition-colors duration-300">
+                  <a href="/cookies" className="hover:text-[#d62332] transition-colors duration-300">
                     Cookie Policy
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <Badge className="bg-gradient-to-r from-[#4fbe99]/20 to-[#3da582]/20 text-[#4fbe99] border-[#4fbe99]/30 text-xs">
+                <Badge className="bg-gradient-to-r from-[#d62332]/20 to-[#b51d2a]/20 text-[#d62332] border-[#d62332]/30 text-xs">
                   <Shield className="w-3 h-3 mr-1" />
                   Secure & Confidential
                 </Badge>

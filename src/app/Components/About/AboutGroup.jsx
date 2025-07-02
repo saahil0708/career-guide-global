@@ -34,42 +34,42 @@ export default function AboutUsPage() {
       description:
         "Dr. Sarah Mitchell identifies the gap in personalized career guidance and begins developing her methodology",
       icon: <Lightbulb className="w-6 h-6" />,
-      color: "from-[#4fbe99] to-[#3da582]",
+      color: "from-[#d62332] to-[#b51d2a]",
     },
     {
       year: "2019",
       title: "Company Founded",
       description: "CareerGuide officially launches with a mission to transform careers through expert guidance",
       icon: <Building className="w-6 h-6" />,
-      color: "from-[#3da582] to-[#2d8a6b]",
+      color: "from-[#b51d2a] to-[#a51a26]",
     },
     {
       year: "2020",
       title: "Digital Transformation",
       description: "Pivoted to online counseling during pandemic, making career guidance accessible globally",
       icon: <Globe className="w-6 h-6" />,
-      color: "from-[#2d8a6b] to-[#4fbe99]",
+      color: "from-[#a51a26] to-[#d62332]",
     },
     {
       year: "2021",
       title: "AI Integration",
       description: "Launched AI-powered career matching and personalized recommendation systems",
       icon: <Zap className="w-6 h-6" />,
-      color: "from-[#4fbe99] to-[#3da582]",
+      color: "from-[#d62332] to-[#b51d2a]",
     },
     {
       year: "2022",
       title: "Industry Recognition",
       description: "Awarded 'Best Career Counseling Platform' by Career Development Association",
       icon: <Award className="w-6 h-6" />,
-      color: "from-[#3da582] to-[#2d8a6b]",
+      color: "from-[#b51d2a] to-[#a51a26]",
     },
     {
       year: "2023",
       title: "Global Expansion",
       description: "Expanded services to 15 countries with localized career guidance programs",
       icon: <TrendingUp className="w-6 h-6" />,
-      color: "from-[#2d8a6b] to-[#4fbe99]",
+      color: "from-[#a51a26] to-[#d62332]",
     },
   ]
 
@@ -79,7 +79,7 @@ export default function AboutUsPage() {
       <section className="relative pt-24 pb-20 overflow-hidden">
         {/* Simple Background with Minimal Clipping */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#4fbe99] via-[#3da582] to-[#2d8a6b]"
+          className="absolute inset-0 bg-gradient-to-br from-[#d62332] via-[#c51f2e] to-[#b51d2a]"
           style={{
             clipPath: "polygon(0 0, 100% 0, 100% 90%, 0 100%)",
           }}
@@ -112,7 +112,7 @@ export default function AboutUsPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
               <Button
                 size="lg"
-                className="bg-white text-[#4fbe99] hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
+                className="bg-white text-[#d62332] hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
               >
                 <BookOpen className="w-5 h-5 mr-3" />
                 Our Mission
@@ -120,7 +120,7 @@ export default function AboutUsPage() {
               </Button>
               <Button
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#4fbe99] hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#d62332] hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
               >
                 <Calendar className="w-5 h-5 mr-3" />
                 Book Consultation
@@ -137,12 +137,12 @@ export default function AboutUsPage() {
             {/* Left Content */}
             <div className="space-y-8">
               <div>
-                <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
+                <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
                   <Heart className="w-5 h-5 mr-2" />
                   Why We Started
                 </Badge>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
                     A Personal Mission
                   </span>
                   <br />
@@ -167,7 +167,7 @@ export default function AboutUsPage() {
 
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-gray-900 flex items-center">
-                  <Target className="w-5 h-5 text-[#4fbe99] mr-2" />
+                  <Target className="w-5 h-5 text-[#d62332] mr-2" />
                   Our Core Beliefs
                 </h3>
                 <div className="space-y-3">
@@ -178,7 +178,7 @@ export default function AboutUsPage() {
                     "Technology should enhance, not replace, human connection",
                   ].map((belief, idx) => (
                     <div key={idx} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#4fbe99] mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#d62332] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-600">{belief}</span>
                     </div>
                   ))}
@@ -188,10 +188,10 @@ export default function AboutUsPage() {
 
             {/* Right Content - Simple Visual */}
             <div className="relative">
-              <Card className="border-0 shadow-2xl bg-gradient-to-br from-[#4fbe99]/5 to-[#3da582]/5 rounded-3xl overflow-hidden">
+              <Card className="border-0 shadow-2xl bg-gradient-to-br from-[#d62332]/5 to-[#b51d2a]/5 rounded-3xl overflow-hidden">
                 <CardContent className="p-12">
                   <div className="text-center space-y-6">
-                    <div className="w-24 h-24 mx-auto bg-gradient-to-br from-[#4fbe99] to-[#3da582] rounded-2xl flex items-center justify-center">
+                    <div className="w-24 h-24 mx-auto bg-gradient-to-br from-[#d62332] to-[#b51d2a] rounded-2xl flex items-center justify-center">
                       <Lightbulb className="w-12 h-12 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">The Spark</h3>
@@ -218,13 +218,13 @@ export default function AboutUsPage() {
           }}
         ></div>
         <div
-          className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#4fbe99]/8 via-[#3da582]/5 to-transparent"
+          className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#d62332]/8 via-[#b51d2a]/5 to-transparent"
           style={{
             clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 0% 85%)",
           }}
         ></div>
         <div
-          className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-gradient-to-r from-[#2d8a6b]/5 to-transparent"
+          className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-gradient-to-r from-[#a51a26]/5 to-transparent"
           style={{
             clipPath: "polygon(0 30%, 100% 0%, 85% 100%, 0% 100%)",
           }}
@@ -232,14 +232,14 @@ export default function AboutUsPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
               <GraduationCap className="w-5 h-5 mr-2" />
               Meet Our Founder
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
               <span className="text-gray-900">Visionary Leadership</span>
               <br />
-              <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
                 Dr. Sarah Mitchell
               </span>
             </h2>
@@ -252,7 +252,7 @@ export default function AboutUsPage() {
                 <div className="relative p-8 lg:p-12 overflow-hidden">
                   {/* Main clipped background */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-br from-[#4fbe99]/10 via-[#3da582]/15 to-[#2d8a6b]/10"
+                    className="absolute inset-0 bg-gradient-to-br from-[#d62332]/10 via-[#b51d2a]/15 to-[#a51a26]/10"
                     style={{
                       clipPath: "polygon(0 0, 85% 0, 100% 85%, 15% 100%)",
                     }}
@@ -260,7 +260,7 @@ export default function AboutUsPage() {
 
                   {/* Secondary clipped element */}
                   <div
-                    className="absolute top-4 right-4 w-32 h-32 bg-gradient-to-br from-[#4fbe99]/20 to-[#3da582]/20"
+                    className="absolute top-4 right-4 w-32 h-32 bg-gradient-to-br from-[#d62332]/20 to-[#b51d2a]/20"
                     style={{
                       clipPath: "circle(50% at 50% 50%)",
                     }}
@@ -268,7 +268,7 @@ export default function AboutUsPage() {
 
                   {/* Third clipped element */}
                   <div
-                    className="absolute bottom-4 left-4 w-24 h-24 bg-gradient-to-br from-[#2d8a6b]/15 to-[#4fbe99]/15"
+                    className="absolute bottom-4 left-4 w-24 h-24 bg-gradient-to-br from-[#a51a26]/15 to-[#d62332]/15"
                     style={{
                       clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                     }}
@@ -278,13 +278,13 @@ export default function AboutUsPage() {
                     <div className="relative inline-block">
                       <Avatar className="w-40 h-40 mx-auto border-4 border-white shadow-2xl">
                         <AvatarImage src="/placeholder.svg?height=160&width=160" />
-                        <AvatarFallback className="text-3xl font-bold bg-gradient-to-r from-[#4fbe99] to-[#3da582] text-white">
+                        <AvatarFallback className="text-3xl font-bold bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white">
                           SM
                         </AvatarFallback>
                       </Avatar>
                       {/* Decorative ring around avatar */}
                       <div
-                        className="absolute -inset-2 bg-gradient-to-r from-[#4fbe99]/20 to-[#3da582]/20 rounded-full -z-10"
+                        className="absolute -inset-2 bg-gradient-to-r from-[#d62332]/20 to-[#b51d2a]/20 rounded-full -z-10"
                         style={{
                           clipPath: "polygon(0% 20%, 20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%)",
                         }}
@@ -292,7 +292,7 @@ export default function AboutUsPage() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900">Dr. Sarah Mitchell</h3>
-                      <p className="text-lg text-[#4fbe99] font-semibold">Founder & CEO</p>
+                      <p className="text-lg text-[#d62332] font-semibold">Founder & CEO</p>
                       <p className="text-gray-600 mt-2">PhD in Psychology, Stanford University</p>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function AboutUsPage() {
 
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold text-gray-900 flex items-center">
-                      <Star className="w-5 h-5 text-[#4fbe99] mr-2" />
+                      <Star className="w-5 h-5 text-[#d62332] mr-2" />
                       Professional Highlights
                     </h4>
                     <div className="space-y-3">
@@ -325,17 +325,17 @@ export default function AboutUsPage() {
                         "Former VP of Talent Development at Tech Giants",
                       ].map((achievement, idx) => (
                         <div key={idx} className="flex items-start space-x-2">
-                          <CheckCircle className="w-4 h-4 text-[#4fbe99] mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#d62332] mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-gray-600">{achievement}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <Card className="bg-gradient-to-r from-[#4fbe99]/5 to-[#3da582]/5 border-l-4 border-l-[#4fbe99] border-0">
+                  <Card className="bg-gradient-to-r from-[#d62332]/5 to-[#b51d2a]/5 border-l-4 border-l-[#d62332] border-0">
                     <CardContent className="p-4">
                       <div className="flex items-start space-x-3">
-                        <Quote className="w-6 h-6 text-[#4fbe99] flex-shrink-0 mt-1" />
+                        <Quote className="w-6 h-6 text-[#d62332] flex-shrink-0 mt-1" />
                         <div>
                           <p className="text-gray-700 italic leading-relaxed">
                             "Every person has unique talents waiting to be discovered. My mission is to help individuals
@@ -357,12 +357,12 @@ export default function AboutUsPage() {
       {/* <section className="relative py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-[#4fbe99]/10 to-[#3da582]/10 text-[#4fbe99] border-[#4fbe99]/20 rounded-full px-6 py-3 text-base font-medium mb-6">
+            <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-3 text-base font-medium mb-6">
               <Navigation className="w-5 h-5 mr-2" />
               Our Roadmap
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-[#4fbe99] via-[#3da582] to-[#2d8a6b] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#d62332] via-[#c51f2e] to-[#b51d2a] bg-clip-text text-transparent">
                 Journey of Growth
               </span>
             </h2>
@@ -372,7 +372,6 @@ export default function AboutUsPage() {
           </div>
 
           <div className="relative max-w-6xl mx-auto">
-            
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none"
               viewBox="0 0 800 600"
@@ -389,9 +388,9 @@ export default function AboutUsPage() {
               />
               <defs>
                 <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#4fbe99" />
-                  <stop offset="50%" stopColor="#3da582" />
-                  <stop offset="100%" stopColor="#2d8a6b" />
+                  <stop offset="0%" stopColor="#d62332" />
+                  <stop offset="50%" stopColor="#c51f2e" />
+                  <stop offset="100%" stopColor="#b51d2a" />
                 </linearGradient>
               </defs>
             </svg>
@@ -399,40 +398,33 @@ export default function AboutUsPage() {
             <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {roadmapEvents.map((event, index) => (
                 <div key={index} className="relative group">
-                  
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                    <div className="w-8 h-8 bg-white border-4 border-[#4fbe99] rounded-full shadow-lg flex items-center justify-center">
-                      <MapPin className="w-4 h-4 text-[#4fbe99]" />
+                    <div className="w-8 h-8 bg-white border-4 border-[#d62332] rounded-full shadow-lg flex items-center justify-center">
+                      <MapPin className="w-4 h-4 text-[#d62332]" />
                     </div>
                   </div>
 
-                  
                   <Card className="border-0 shadow-xl bg-white rounded-2xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 pt-8">
                     <CardContent className="p-6">
                       <div className="text-center space-y-4">
-                        
                         <div
                           className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${event.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}
                         >
                           {event.icon}
                         </div>
 
-                        
                         <div
                           className={`text-3xl font-bold bg-gradient-to-r ${event.color} bg-clip-text text-transparent`}
                         >
                           {event.year}
                         </div>
 
-                        
-                        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#4fbe99] transition-colors duration-300">
+                        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#d62332] transition-colors duration-300">
                           {event.title}
                         </h3>
 
-                        
                         <p className="text-gray-600 leading-relaxed text-sm">{event.description}</p>
 
-                        
                         <div className="flex justify-center pt-2">
                           <div className="w-12 h-1 bg-gray-200 rounded-full overflow-hidden">
                             <div
@@ -445,18 +437,16 @@ export default function AboutUsPage() {
                     </CardContent>
                   </Card>
 
-                  
                   {index < roadmapEvents.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#4fbe99] to-[#3da582] opacity-30 z-10"></div>
+                    <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#d62332] to-[#b51d2a] opacity-30 z-10"></div>
                   )}
                 </div>
               ))}
             </div>
 
-            
             <div className="flex justify-center mt-12">
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#4fbe99] to-[#3da582] rounded-full flex items-center justify-center shadow-2xl">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#d62332] to-[#b51d2a] rounded-full flex items-center justify-center shadow-2xl">
                   <Star className="w-8 h-8 text-white fill-current" />
                 </div>
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
@@ -469,7 +459,7 @@ export default function AboutUsPage() {
       </section> */}
 
       {/* Call to Action */}
-      <section className="relative py-20 bg-gradient-to-r from-[#4fbe99] to-[#3da582]">
+      <section className="relative py-20 bg-gradient-to-r from-[#d62332] to-[#b51d2a]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Ready to Start Your Journey?</h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
@@ -478,14 +468,14 @@ export default function AboutUsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-white text-[#4fbe99] hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
+              className="bg-white text-[#d62332] hover:bg-gray-100 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl transition-all duration-300 border-0"
             >
               <Calendar className="w-5 h-5 mr-3" />
               Book Free Consultation
             </Button>
             <Button
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#4fbe99] hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-[#d62332] hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold bg-transparent backdrop-blur-sm transition-all duration-300"
             >
               <Briefcase className="w-5 h-5 mr-3" />
               Explore Services

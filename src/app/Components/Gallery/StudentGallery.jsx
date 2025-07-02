@@ -190,14 +190,14 @@ export default function StudentGalleryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50/20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-[#d62332]/10">
       {/* Hero Section with Floating Elements */}
       <section className="relative overflow-hidden min-h-screen flex items-center">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-400/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-pulse delay-1000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-emerald-400/5 to-teal-400/5 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#d62332]/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#b51d2a]/10 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#d62332]/5 to-[#b51d2a]/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -205,14 +205,14 @@ export default function StudentGalleryPage() {
             {/* Left Content */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <Badge className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 text-emerald-700 border border-emerald-200/50 rounded-full px-6 py-2 text-base font-medium">
+                <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border border-[#d62332]/50 rounded-full px-6 py-2 text-base font-medium">
                   <GraduationCap className="w-5 h-5 mr-2" />
                   Students' Moments
                 </Badge>
 
                 <h1 className="text-6xl lg:text-7xl font-bold tracking-tight">
                   <span className="block text-slate-900">Every</span>
-                  <span className="block bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-[#d62332] via-[#b51d2a] to-[#a51a26] bg-clip-text text-transparent">
                     Moment
                   </span>
                   <span className="block text-slate-900">Matters</span>
@@ -227,15 +227,15 @@ export default function StudentGalleryPage() {
               {/* Interactive Stats */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: `${studentGallery.length}+`, label: "Stories Captured", color: "emerald" },
-                  { value: `${categories.length - 1}`, label: "Categories", color: "teal" },
+                  { value: `${studentGallery.length}+`, label: "Stories Captured", color: "[#d62332]" },
+                  { value: `${categories.length - 1}`, label: "Categories", color: "[#b51d2a]" },
                 ].map((stat, index) => (
                   <div key={index} className="group cursor-pointer">
                     <div
-                      className={`bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:bg-${stat.color}-50/50`}
+                      className={`bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:bg-[#d62332]/5`}
                     >
                       <div
-                        className={`text-4xl font-bold text-${stat.color}-600 mb-2 group-hover:scale-110 transition-transform duration-300`}
+                        className={`text-4xl font-bold text-[#d62332] mb-2 group-hover:scale-110 transition-transform duration-300`}
                       >
                         {stat.value}
                       </div>
@@ -265,7 +265,7 @@ export default function StudentGalleryPage() {
 
                     {/* Content Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                      <Badge className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4">
+                      <Badge className="bg-gradient-to-r from-[#d62332]/20 to-[#b51d2a]/20 text-[#ff9ea6] border border-[#d62332]/30 mb-4">
                         Featured Story
                       </Badge>
                       <h3 className="text-3xl font-bold mb-3">{image.title}</h3>
@@ -309,51 +309,6 @@ export default function StudentGalleryPage() {
         </div>
       </section>
 
-      {/* Search and Filter Section */}
-      {/* <section className="sticky top-0 z-20 bg-white/90 backdrop-blur-xl border-b border-slate-200/50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col lg:flex-row gap-6 items-center">
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-              <input
-                type="text"
-                placeholder="Search stories and moments..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-slate-50/50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-400 transition-all duration-300"
-              />
-            </div>
-
-            <div className="flex gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
-              {categories.map((category) => (
-                <Button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  variant="ghost"
-                  className={`rounded-full px-4 py-2 transition-all duration-300 whitespace-nowrap border ${
-                    selectedCategory === category.id
-                      ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg border-transparent"
-                      : "border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-600 hover:bg-emerald-50/50"
-                  }`}
-                >
-                  {category.icon}
-                  <span className="ml-2">{category.label}</span>
-                  <Badge
-                    className={`ml-2 text-xs ${
-                      selectedCategory === category.id
-                        ? "bg-white/20 text-white border-0"
-                        : "bg-slate-100 text-slate-600 border-0"
-                    }`}
-                  >
-                    {category.count}
-                  </Badge>
-                </Button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Magazine-Style Layout */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -371,7 +326,9 @@ export default function StudentGalleryPage() {
               {featuredImages.length > 0 && (
                 <div className="space-y-16">
                   <div className="text-center space-y-4">
-                    <h2 className="text-6xl font-bold text-slate-900">Featured <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">Stories</span> </h2>
+                    <h2 className="text-6xl font-bold text-slate-900">
+                      Featured <span className="bg-gradient-to-r from-[#d62332] via-[#b51d2a] to-[#a51a26] bg-clip-text text-transparent">Stories</span>
+                    </h2>
                     <p className="text-xl text-slate-600">Highlighting the special moments of our Students</p>
                   </div>
 
@@ -411,11 +368,11 @@ export default function StudentGalleryPage() {
                       <div className="flex-1 space-y-6">
                         <div className="space-y-4">
                           <div className="flex items-center gap-3">
-                            <Badge className="bg-gradient-to-r from-amber-400 to-orange-500 text-white border-0">
+                            <Badge className="bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white border-0">
                               <Star className="w-3 h-3 mr-1 fill-current" />
                               Featured
                             </Badge>
-                            <Badge className="bg-emerald-500/10 text-emerald-700 border border-emerald-200">
+                            <Badge className="bg-[#d62332]/10 text-[#d62332] border border-[#d62332]/20">
                               {categories.find((cat) => cat.id === image.category)?.label}
                             </Badge>
                           </div>
@@ -447,7 +404,7 @@ export default function StudentGalleryPage() {
 
                         <Button
                           onClick={() => openLightbox(image.id)}
-                          className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-lg hover:scale-105 transition-all duration-300"
+                          className="bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white hover:shadow-lg hover:scale-105 transition-all duration-300"
                         >
                           View Full Story
                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -462,7 +419,9 @@ export default function StudentGalleryPage() {
               {regularImages.length > 0 && (
                 <div className="space-y-12">
                   <div className="text-center space-y-4">
-                    <h2 className="text-6xl font-bold text-slate-900">Campus <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent">Timeline</span></h2>
+                    <h2 className="text-6xl font-bold text-slate-900">
+                      Campus <span className="bg-gradient-to-r from-[#d62332] via-[#b51d2a] to-[#a51a26] bg-clip-text text-transparent">Timeline</span>
+                    </h2>
                     <p className="text-xl text-slate-600">Moments that shape our community</p>
                   </div>
 
@@ -471,14 +430,14 @@ export default function StudentGalleryPage() {
                     <Button
                       onClick={() => scrollTimeline("left")}
                       variant="outline"
-                      className="rounded-full w-12 h-12 p-0 border-slate-200 hover:border-emerald-300 hover:text-emerald-600"
+                      className="rounded-full w-12 h-12 p-0 border-slate-200 hover:border-[#d62332] hover:text-[#d62332]"
                     >
                       <ChevronLeft className="w-5 h-5" />
                     </Button>
                     <Button
                       onClick={() => scrollTimeline("right")}
                       variant="outline"
-                      className="rounded-full w-12 h-12 p-0 border-slate-200 hover:border-emerald-300 hover:text-emerald-600"
+                      className="rounded-full w-12 h-12 p-0 border-slate-200 hover:border-[#d62332] hover:text-[#d62332]"
                     >
                       <ChevronRight className="w-5 h-5" />
                     </Button>
@@ -527,7 +486,7 @@ export default function StudentGalleryPage() {
                           </div>
 
                           <div className="p-6 space-y-3">
-                            <h4 className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors duration-300">
+                            <h4 className="text-xl font-bold text-slate-900 group-hover:text-[#d62332] transition-colors duration-300">
                               {image.title}
                             </h4>
                             <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">{image.description}</p>
@@ -583,12 +542,12 @@ export default function StudentGalleryPage() {
                   <div className="md:col-span-2 space-y-4">
                     <div className="flex items-center gap-3">
                       {selectedImageData.featured && (
-                        <Badge className="bg-gradient-to-r from-amber-400 to-orange-500 text-white border-0">
+                        <Badge className="bg-gradient-to-r from-[#d62332] to-[#b51d2a] text-white border-0">
                           <Star className="w-3 h-3 mr-1 fill-current" />
                           Featured
                         </Badge>
                       )}
-                      <Badge className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                      <Badge className="bg-[#d62332]/20 text-[#ff9ea6] border border-[#d62332]/30">
                         {categories.find((cat) => cat.id === selectedImageData.category)?.label}
                       </Badge>
                     </div>
@@ -646,28 +605,6 @@ export default function StudentGalleryPage() {
           </div>
         </div>
       )}
-
-      {/* Call to Action */}
-      {/* <section className="py-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-slate-900">Share Your Story</h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                Every moment at our campus tells a story. Share yours and inspire others in our community!
-              </p>
-            </div>
-
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-2xl hover:shadow-emerald-500/25 hover:scale-105 rounded-2xl px-8 py-6 text-lg font-semibold transition-all duration-500 border-0"
-            >
-              <Camera className="w-5 h-5 mr-3" />
-              Submit Your Story
-            </Button>
-          </div>
-        </div>
-      </section> */}
     </div>
   )
 }
