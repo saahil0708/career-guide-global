@@ -30,9 +30,14 @@ export const InfiniteMovingCards = ({
           )}
         >
           {[...items, ...items].map((item, idx) => (
+            // <li
+            //   key={`${item.name}-${idx}`}
+            //   className="relative w-[300px] max-w-full shrink-0 rounded-2xl border border-b-0 border-slate-200 bg-gradient-to-b from-white via-slate-50 to-slate-100 px-8 py-28 md:w-[350px] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] dark:border-slate-700 dark:from-slate-800 dark:to-slate-900"
+            // >
+            // </li>
             <li
               key={`${item.name}-${idx}`}
-              className="relative w-[300px] max-w-full shrink-0 rounded-2xl border border-b-0 border-slate-200 bg-gradient-to-b from-white via-slate-50 to-slate-100 px-8 py-28 md:w-[350px] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] dark:border-slate-700 dark:from-slate-800 dark:to-slate-900"
+              className="relative w-[300px] max-w-full shrink-0 rounded-2xl px-8 py-28 md:w-[350px] transition-all duration-300 hover:scale-[1.02] dark:border-slate-700 dark:from-slate-800 dark:to-slate-900" style={{backgroundImage: `url(${item.image})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}
             >
             </li>
           ))}

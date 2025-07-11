@@ -555,7 +555,7 @@ export default function ImpactPage() {
       </section>
 
       {/* Global Reach */}
-      <section className="relative py-20 lg:py-32">
+      {/* <section className="relative py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-gradient-to-r from-[#d62332]/10 to-[#b51d2a]/10 text-[#d62332] border-[#d62332]/20 rounded-full px-6 py-2 text-base font-medium mb-6">
@@ -606,7 +606,7 @@ export default function ImpactPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="relative py-20 bg-gradient-to-r from-[#d62332] to-[#b51d2a]">

@@ -38,23 +38,6 @@ const ServicesPreview = () => {
       color: "from-[#d62332] to-[#b51d2a]",
     },
     {
-      id: 2,
-      icon: <Users className="w-8 h-8" />,
-      title: "Group Career Workshops",
-      description:
-        "Interactive group sessions covering essential career development topics with peer learning opportunities.",
-      features: [
-        "Resume Writing Workshop",
-        "Interview Skills Training",
-        "Networking Strategies",
-        "LinkedIn Optimization",
-      ],
-      sessions: "Weekly sessions",
-      duration: "2 hours each",
-      badge: "Interactive",
-      color: "from-[#b51d2a] to-[#a51a26]",
-    },
-    {
       id: 3,
       icon: <GraduationCap className="w-8 h-8" />,
       title: "Student Career Guidance",
@@ -65,18 +48,6 @@ const ServicesPreview = () => {
       duration: "60 mins each",
       badge: "For Students",
       color: "from-[#d62332] to-[#c51f2e]",
-    },
-    {
-      id: 4,
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Career Transition Support",
-      description:
-        "Comprehensive support for professionals looking to change careers, industries, or advance to leadership roles.",
-      features: ["Transition Planning", "Skill Transferability", "Industry Research", "Leadership Development"],
-      sessions: "6-8 sessions",
-      duration: "60 mins each",
-      badge: "Advanced",
-      color: "from-[#a51a26] to-[#d62332]",
     },
   ]
 
