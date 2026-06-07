@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Wallet, CheckCircle2, Target, ChevronRight } from "lucide-react";
+import { Wallet, CheckCircle2, Target, ChevronRight, Compass, Globe2, FileText, Plane, Brain, Search, PenTool, GraduationCap } from "lucide-react";
 import Navbar from "@/components/navbar";
 import { FluidArrowRight } from "@/components/fluid-arrow";
+import MVPTestimonials from "@/components/mvpblocks/testimonials-marquee";
+import HowItWorks from "@/components/how-it-works";
 
 export default function Home() {
   const containerVariants = {
@@ -46,7 +48,18 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-neutral-900 relative">
+    <div className="min-h-screen bg-gray-200 text-neutral-900 relative overflow-hidden">
+      
+      {/* Dynamic Red Flashes / Light Beams from Multiple Angles */}
+      {/* Top Left Flash */}
+      <div className="absolute top-[-10%] left-[-20%] w-[150vw] h-[45vh] bg-gradient-to-br from-[#ca0019]/40 via-[#ca0019]/15 to-transparent -rotate-[20deg] blur-[100px] pointer-events-none z-0" />
+      
+      {/* Right Side Flash */}
+      <div className="absolute top-[25%] right-[-30%] w-[140vw] h-[60vh] bg-gradient-to-bl from-[#ca0019]/35 via-[#ca0019]/10 to-transparent rotate-[15deg] blur-[120px] pointer-events-none z-0" />
+
+      {/* Bottom Flash */}
+      <div className="absolute bottom-[-10%] left-[-10%] w-[120vw] h-[40vh] bg-gradient-to-t from-[#ca0019]/40 via-transparent to-transparent blur-[80px] pointer-events-none z-0" />
+
       {/* SVG Clip Path Definition (Aspect-ratio corrected coordinates for perfect circular curves) */}
       <svg className="w-0 h-0 absolute pointer-events-none">
         <defs>
@@ -75,8 +88,8 @@ export default function Home() {
       {/* Floating Navbar */}
       <Navbar />
 
-      {/* Hero Container - Premium max-w-[1440px] */}
-      <main className="max-w-[1440px] bg-none mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-28 pb-10">
+      {/* Hero Container */}
+      <main className="max-w-[1340px] bg-none mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-10">
 
         {/* Relative layout wrapper containing clipped div and negative-space widgets */}
         <div className="relative w-full h-auto lg:h-[620px] select-none flex flex-col lg:block">
@@ -94,7 +107,7 @@ export default function Home() {
               <img
                 src="/imageDark.png"
                 alt="Hero Background"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover scale-105 object-center"
               />
               {/* Dark gradient overlay — ensures left text is always legible */}
               <div
@@ -187,7 +200,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={widgetVariants}
-            className="hidden lg:block absolute top-[83%] -translate-y-1/2 right-4 lg:right-1 z-20 select-none pointer-events-auto"
+            className="hidden lg:block absolute top-[83%] -translate-y-1/2 right-4 lg:-right-1 z-20 select-none pointer-events-auto"
           >
             <button className="group relative flex items-center h-12 w-[185px] cursor-pointer">
               {/* Expanding pill background — anchored left, grows rightward */}
@@ -195,11 +208,11 @@ export default function Home() {
 
               {/* Arrow icon — always in the circle on the left */}
               <span className="relative z-10 w-12 h-12 flex items-center justify-center shrink-0">
-                <ChevronRight size={18} className="text-white" />
+                <ChevronRight size={22} className="text-white" />
               </span>
 
               {/* Know More text — always visible, colour flips to white as pill sweeps over it */}
-              <span className="relative z-10 ml-5 text-neutral-900 group-hover:text-white font-extrabold text-xs tracking-wider uppercase whitespace-nowrap transition-colors duration-150 delay-150">
+              <span className="relative z-10 ml-3 group-hover:text-white text-black font-extrabold text-xs tracking-wider uppercase whitespace-nowrap transition-colors duration-150 delay-150">
                 Know More
               </span>
             </button>
@@ -210,7 +223,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={widgetVariants}
-            className="hidden lg:flex absolute bottom-4.5 right-4 lg:right-4 z-20 w-[240px] items-center gap-3.5 select-none pointer-events-auto"
+            className="hidden lg:flex absolute bottom-4.5 right-4 lg:-right-1 z-20 w-[240px] items-center gap-3.5 select-none pointer-events-auto"
           >
             {/* Overlapping student portraits */}
             <div className="flex -space-x-3 shrink-0">
@@ -262,7 +275,7 @@ export default function Home() {
               <span className="relative z-10 w-12 h-12 flex items-center justify-center shrink-0">
                 <ChevronRight size={18} className="text-white" />
               </span>
-              <span className="relative z-10 ml-5 text-neutral-900 group-hover:text-white font-extrabold text-xs tracking-wider uppercase whitespace-nowrap transition-colors duration-150 delay-150">
+              <span className="relative z-10 ml-5 text-white font-extrabold text-xs tracking-wider uppercase whitespace-nowrap transition-colors duration-150 delay-150">
                 Know More
               </span>
             </button>
@@ -271,6 +284,219 @@ export default function Home() {
         </div>
 
       </main>
+
+      {/* How It Works Section */}
+      <HowItWorks />
+
+      {/* Our Expertise / What We Do Section (Bento Grid) */}
+      <section className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-20">
+
+        {/* Header with vertical bar and description */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start mb-12 lg:mb-16 gap-6 lg:gap-12">
+          <div className="flex flex-col md:flex-row items-center md:items-stretch gap-6 flex-1 text-center md:text-left">
+            <motion.div
+              initial={{ opacity: 0, scaleY: 0 }}
+              whileInView={{ opacity: 1, scaleY: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="hidden md:block w-1.5 bg-[#ca0019] rounded-full origin-top"
+            />
+            <div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="text-[#ca0019] font-bold tracking-widest uppercase text-sm mb-3"
+              >
+                Our Expertise
+              </motion.p>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 leading-tight"
+              >
+                What We Do
+              </motion.h2>
+            </div>
+          </div>
+        </div>
+
+        {/* Bento Grid */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(220px,_auto)] lg:auto-rows-[220px]"
+        >
+
+          {/* Card 1: Wide (Career Counseling) */}
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } }}
+            className="lg:col-span-2 bg-gray-50 rounded-4xl p-6 lg:p-8 relative overflow-hidden group shadow-sm border border-gray-100 hover:shadow-xl hover:border-gray-200 transition-all duration-500 flex flex-col md:flex-row gap-8 justify-between"
+          >
+            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-gray-50 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 group-hover:scale-110 transition-transform duration-700 pointer-events-none" />
+
+            <div className="relative z-10 flex-1 flex flex-col justify-between">
+              <div className="w-12 h-12 bg-neutral-900 rounded-2xl flex items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform duration-300 shrink-0 border border-neutral-700/50">
+                <Compass className="w-5 h-5 text-white" />
+              </div>
+              <div className="mt-6">
+                <h3 className="text-xl lg:text-2xl font-bold text-neutral-900 mb-2">Career Counseling & Mentorship</h3>
+                <p className="text-sm lg:text-base text-neutral-500 font-medium leading-relaxed max-w-xl">Expert guidance to identify your unique strengths, align your passions, and map out the perfect academic and professional career path.</p>
+              </div>
+            </div>
+
+            {/* Right Side 3D Illustration */}
+            <div className="relative z-10 hidden md:flex w-56 shrink-0 items-center justify-end pointer-events-none select-none -mr-4 mb-6">
+              <motion.div
+                // animate={{ y: [-5, 5, -5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Image
+                  src="/mentor.png"
+                  alt="Career Counseling Illustration"
+                  width={220}
+                  height={220}
+                  className="object-contain"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Card 2: Square (University Shortlisting - Red Background) */}
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } }}
+            className="bg-[#ca0019] rounded-4xl p-6 lg:p-8 relative overflow-hidden group shadow-lg hover:shadow-2xl hover:shadow-[#ca0019]/40 transition-all duration-500 flex flex-col justify-between"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-[#ca0019] to-[#a8001a] pointer-events-none" />
+            <div className="relative z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 group-hover:-translate-y-1 transition-transform duration-300 shrink-0">
+              <Globe2 className="w-5 h-5 text-white" />
+            </div>
+            <div className="relative z-10 mt-6">
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">University Shortlisting</h3>
+              <p className="text-sm lg:text-base text-white/80 font-medium leading-relaxed">Data-driven matchmaking for the world's top universities.</p>
+            </div>
+          </motion.div>
+
+          {/* Card 3: Square (Application Support - Red Background) */}
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } }}
+            className="bg-[#ca0019] rounded-4xl p-6 lg:p-8 relative overflow-hidden group shadow-lg hover:shadow-2xl hover:shadow-[#ca0019]/40 transition-all duration-500 flex flex-col justify-between"
+          >
+            <div className="absolute inset-0 bg-gradient-to-bl from-[#ca0019] to-[#a8001a] pointer-events-none" />
+            <div className="relative z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 group-hover:-translate-y-1 transition-transform duration-300 shrink-0">
+              <FileText className="w-5 h-5 text-white" />
+            </div>
+            <div className="relative z-10 mt-6">
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">Application Support</h3>
+              <p className="text-sm lg:text-base text-white/80 font-medium leading-relaxed">Crafting compelling narratives to build winning applications.</p>
+            </div>
+          </motion.div>
+
+          {/* Card 4: Wide (Psychometric Testing) */}
+          <motion.div
+            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } }}
+            className="lg:col-span-2 bg-gray-50 rounded-4xl p-6 lg:p-8 relative overflow-hidden group shadow-sm border border-gray-100 hover:shadow-xl hover:border-gray-200 transition-all duration-500 flex flex-col md:flex-row gap-8 justify-between"
+          >
+            <div className="absolute right-0 bottom-0 w-48 h-48 bg-gray-50 rounded-tl-full opacity-50 group-hover:scale-110 transition-transform duration-700 pointer-events-none origin-bottom-right" />
+
+            <div className="relative z-10 flex-1 flex flex-col justify-between">
+              <div className="w-12 h-12 bg-neutral-900 rounded-2xl flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300 shrink-0 border border-neutral-700/50">
+                <Brain className="w-5 h-5 text-white" />
+              </div>
+              <div className="mt-6">
+                <h3 className="text-xl lg:text-2xl font-bold text-neutral-900 mb-2">Psychometric Testing & Analysis</h3>
+                <p className="text-sm lg:text-base text-neutral-500 font-medium leading-relaxed max-w-xl">Assessments to uncover your innate talents, personality traits, and strengths, ensuring you pursue a career path that truly fits you.</p>
+              </div>
+            </div>
+
+            {/* Right Side 3D Illustration */}
+            <div className="relative z-10 hidden md:flex w-56 shrink-0 items-center justify-end pointer-events-none select-none -mr-4">
+              <motion.div
+                // animate={{ y: [-5, 5, -5] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <Image
+                  src="/psychometric_testing_red_black.png"
+                  alt="Psychometric Testing Illustration"
+                  width={220}
+                  height={220}
+                  className="object-contain"
+                />
+              </motion.div>
+            </div>
+          </motion.div>
+
+        </motion.div>
+      </section>
+
+      {/* Our Network / Infinite Marquee Section */}
+      <section className="w-full py-20 lg:py-24 relative overflow-hidden">
+        {/* Sweeping Red Flash for Our Network */}
+        <div className="absolute top-[30%] right-[-15%] w-[120vw] h-[50vh] bg-gradient-to-bl from-[#ca0019]/40 via-[#ca0019]/10 to-transparent rotate-[10deg] blur-[100px] pointer-events-none z-0" />
+
+        <div className="relative z-10 max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col items-end text-right">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex items-center gap-4 mb-3 justify-end w-full"
+          >
+            <span className="w-12 h-[2px] bg-[#ca0019]"></span>
+            <p className="text-[#ca0019] font-bold tracking-widest uppercase text-sm">
+              Our Network
+            </p>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl font-black text-neutral-900 tracking-tight max-w-xl"
+          >
+            Trusted by students at the world's leading institutions
+          </motion.h2>
+        </div>
+
+        {/* Marquee Wrapper with edge fade masks */}
+        <div
+          className="relative w-full overflow-hidden flex py-10"
+          style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}
+        >
+          {/* We create two exact duplicate tracks running side by side and translate them by -100% */}
+          {[...Array(2)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="flex shrink-0 items-center justify-around min-w-full gap-16 lg:gap-24 px-8 lg:px-12"
+              animate={{ x: ["0%", "-100%"] }}
+              transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
+            >
+              {[
+                { name: "HARVARD", style: "font-serif tracking-widest text-3xl lg:text-4xl" },
+                { name: "OXFORD", style: "font-serif tracking-widest text-3xl lg:text-4xl" },
+                { name: "STANFORD", style: "font-serif tracking-[0.2em] text-3xl lg:text-4xl" },
+                { name: "CAMBRIDGE", style: "font-serif tracking-widest text-3xl lg:text-4xl" },
+                { name: "M I T", style: "font-sans font-black tracking-[0.3em] text-3xl lg:text-4xl" },
+                { name: "YALE", style: "font-serif tracking-[0.25em] text-3xl lg:text-4xl" },
+                { name: "COLUMBIA", style: "font-serif tracking-widest text-3xl lg:text-4xl" }
+              ].map((uni, idx) => (
+                <div key={idx} className={`text-gray-500 font-bold ${uni.style} select-none pointer-events-none hover:text-[#ca0019]/60 transition-colors duration-500`}>
+                  {uni.name}
+                </div>
+              ))}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* MVPBlocks Testimonials Component */}
+      <MVPTestimonials />
     </div>
   );
 }

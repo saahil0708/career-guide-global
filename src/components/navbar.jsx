@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FluidArrowRight } from "@/components/fluid-arrow";
@@ -427,7 +427,7 @@ export default function Navbar() {
               <Link
                 href="/apply"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 rounded-2xl bg-[#ca0019] hover:bg-[#b00015] text-white font-bold text-center shadow-lg shadow-[#ca0019]/20 transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-full bg-[#ca0019] hover:bg-[#b00015] text-white font-bold text-center shadow-lg shadow-[#ca0019]/20 transition-all flex items-center justify-center gap-2"
               >
                 Apply Now
                 <ArrowRight className="w-4 h-4" />
