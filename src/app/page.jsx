@@ -1,9 +1,50 @@
 'use client'
 
+import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Wallet, CheckCircle2, Target, ChevronRight, Compass, Globe2, FileText, Plane, Brain, Search, PenTool, GraduationCap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Wallet, CheckCircle2, Target, ChevronRight, Compass, Globe2, FileText, Plane, Brain, Search, PenTool, GraduationCap, Plus, Minus } from "lucide-react";
 import Navbar from "@/components/navbar";
+
+const FAQItem = ({ faq, index }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ delay: 0.1 * index }}
+      className="bg-white rounded-2xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+    >
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-left px-6 sm:px-8 py-6 flex items-center justify-between focus:outline-none group"
+      >
+        <span className={`text-base sm:text-lg font-extrabold transition-colors duration-300 pr-6 ${isOpen ? "text-[#ca0019]" : "text-neutral-900 group-hover:text-[#ca0019]"}`}>
+          {faq.q}
+        </span>
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen ? "bg-[#ca0019] text-white rotate-180" : "bg-gray-50 border border-gray-200 text-neutral-500 group-hover:bg-[#ca0019]/10 group-hover:text-[#ca0019] group-hover:border-[#ca0019]/20"}`}>
+          {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+        </div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="px-6 sm:px-8 pb-6 text-sm sm:text-base text-neutral-600 font-medium leading-relaxed">
+              {faq.a}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 import { FluidArrowRight } from "@/components/fluid-arrow";
 import MVPTestimonials from "@/components/mvpblocks/testimonials-marquee";
 import HowItWorks from "@/components/how-it-works";
@@ -495,8 +536,54 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* MVPBlocks Testimonials Component */}
       <MVPTestimonials />
+      {/* FAQ Section */}
+      <section className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 relative">
+        <div className="flex flex-col items-end text-right mb-12">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="flex items-center gap-4 mb-3 justify-end w-full"
+          >
+            <span className="w-12 h-[2px] bg-[#ca0019]"></span>
+            <p className="text-[#ca0019] font-bold tracking-widest uppercase text-sm">
+              Got Questions?
+            </p>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight mb-6"
+          >
+            Frequently Asked Questions
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.2 }}
+            className="text-neutral-500 font-medium max-w-md"
+          >
+            Can't find the answer you're looking for? Reach out to our support team and we'll be happy to help you out.
+          </motion.p>
+        </div>
+        
+        <div className="flex flex-col gap-4">
+          {[
+            { q: "How do you help with university shortlisting?", a: "We use a data-driven approach, analyzing your academic profile, career goals, and budget to match you with universities that offer the best fit and ROI." },
+            { q: "Do you offer scholarship assistance?", a: "Yes, we help identify relevant scholarships and provide guidance on crafting compelling scholarship essays to maximize your chances of securing funding." },
+            { q: "Is the psychometric testing mandatory?", a: "While not mandatory, we highly recommend it. It provides valuable insights into your strengths and traits, ensuring your chosen career path is a natural fit." },
+            { q: "What is your success rate?", a: "Our students consistently secure admissions to top-tier universities globally, with a significant percentage receiving scholarships or financial aid. We focus on matching you with the right institution." }
+          ].map((faq, index) => (
+            <FAQItem key={index} faq={faq} index={index} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
