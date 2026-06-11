@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const FluidArrowRight = ({ size = 16, className = "" }) => (
+export const FluidArrowRight = ({ size = 22, className = "font-bold" }) => (
   <svg
     width={size}
     height={size}
