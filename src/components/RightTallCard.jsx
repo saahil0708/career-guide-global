@@ -23,7 +23,7 @@ export default function RightTallCard() {
       {/* Top Section: Get Started Button in the extreme top right corner */}
       <Link 
         href="/contact" 
-        className="absolute -top-5 -right-4.5 z-10 bg-[#ccff00] text-black px-6 py-2.5 border-20 border-black rounded-full font-extrabold text-sm hover:opacity-90 active:scale-[0.97] transition-all cursor-pointer shadow-lg shadow-black/25"
+        className="absolute -top-5 -right-4.5 z-10 bg-[#ccff00] text-black px-6 py-2.5 border-20 border-[#181818] outline-none rounded-full font-extrabold text-sm hover:opacity-90 active:scale-[0.97] transition-all cursor-pointer shadow-lg shadow-black/25"
       >
         Get Started
       </Link>
@@ -34,7 +34,7 @@ export default function RightTallCard() {
           Career Guide
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight max-w-sm">
-          Accelerating global professional careers.
+          Accelerating <span className='text-[#ccff00]'>global</span> professional careers.
         </h2>
         <p className="text-[11px] text-neutral-300 leading-relaxed font-light max-w-xs">
           We connect elite tech and finance leaders to international opportunities.
