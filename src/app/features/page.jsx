@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Compass, Briefcase, TrendingUp } from 'lucide-react';
+import Navbar from '../components/navbar';
+import RightTallCard from '../components/RightTallCard';
 
 export default function FeaturesPage() {
   // Animation presets
@@ -20,8 +22,12 @@ export default function FeaturesPage() {
   };
 
   return (
-    <div className="w-full text-white py-4 overflow-y-auto max-h-[calc(100vh-12rem)] pr-2 scrollbar-thin scrollbar-thumb-neutral-800">
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full text-white pb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch w-full">
+        {/* Left Column */}
+        <div className="lg:col-span-7 flex flex-col gap-6 w-full">
+          <Navbar />
+          <div className="max-w-4xl mx-auto w-full pt-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,6 +94,14 @@ export default function FeaturesPage() {
             </p>
           </motion.div>
         </motion.div>
+        </motion.div>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="lg:col-span-5 hidden lg:block">
+          <RightTallCard />
+        </div>
       </div>
     </div>
   );

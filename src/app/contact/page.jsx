@@ -3,11 +3,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import Navbar from '../components/navbar';
+import RightTallCard from '../components/RightTallCard';
 
 export default function ContactPage() {
   return (
-    <div className="w-full text-white py-4 overflow-y-auto max-h-[calc(100vh-12rem)] pr-2 scrollbar-thin scrollbar-thumb-neutral-800">
-      <div className="max-w-4xl mx-auto">
+    <div className="w-full text-white pb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch w-full">
+        {/* Left Column */}
+        <div className="lg:col-span-7 flex flex-col gap-6 w-full">
+          <Navbar />
+          <div className="max-w-4xl mx-auto w-full pt-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Info side */}
           <motion.div 
@@ -84,6 +90,13 @@ export default function ContactPage() {
               </button>
             </form>
           </motion.div>
+        </div>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="lg:col-span-5 hidden lg:block">
+          <RightTallCard />
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ export default function RightTallCard() {
       {/* Top Section: Get Started Button in the extreme top right corner */}
       <Link 
         href="/contact" 
-        className="absolute -top-5 -right-4.5 z-10 bg-[#ccff00] text-black px-6 py-2.5 border-20 border-[#181818] outline-none rounded-full font-extrabold text-sm hover:opacity-90 active:scale-[0.97] transition-all cursor-pointer shadow-lg shadow-black/25"
+        className="absolute -top-5 -right-4.5 z-10 bg-[#ccff00] text-black px-6 py-2.5 border-20 border-[#181818] outline-none rounded-full font-extrabold text-sm active:scale-[0.97] transition-all cursor-pointer shadow-lg shadow-black/25"
       >
         Get Started
       </Link>
