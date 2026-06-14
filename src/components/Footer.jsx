@@ -17,9 +17,9 @@ export default function Footer() {
         
         {/* Right Side: Links */}
         <div className="flex items-center gap-6 md:gap-8">
-          <Link href="/about" className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">About</Link>
-          <Link href="/contact" className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">Contact</Link>
-          <Link href="#" className="text-[10px] text-neutral-500 hover:text-[#ccff00] uppercase tracking-widest font-bold transition-colors">LinkedIn</Link>
+          <Link href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }} className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">About</Link>
+          <Link href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }} className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">Contact</Link>
+          <Link href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }} className="text-[10px] text-neutral-500 hover:text-[#ccff00] uppercase tracking-widest font-bold transition-colors">LinkedIn</Link>
         </div>
       </div>
     </footer>

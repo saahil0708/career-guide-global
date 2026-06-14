@@ -47,13 +47,15 @@ export default function Home() {
               className="flex items-center gap-2.5 mt-2"
             >
               <Link
-                href="/features"
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }}
                 className="bg-[#ccff00] text-black px-8 py-3 rounded-full font-extrabold text-sm hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer shadow-md shadow-[#ccff00]/10"
               >
                 Explore Now
               </Link>
               <Link
-                href="/features"
+                href="#"
+                onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }}
                 className="w-11 h-11 rounded-full bg-[#ccff00] -rotate-[40deg] text-black flex items-center justify-center hover:opacity-90 hover:rotate-0 active:scale-[0.98] transition-all cursor-pointer shadow-md shadow-[#ccff00]/10"
                 aria-label="Go to Features"
               >

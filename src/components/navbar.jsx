@@ -7,9 +7,9 @@ import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '/features' },
-  { label: 'Stats', href: '/stats' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'About', href: '/about' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: "Students' Corner", href: '/students' },
 ];
 
 export default function Navbar() {
@@ -64,10 +64,20 @@ export default function Navbar() {
       <nav className="hidden md:flex items-center gap-8">
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href;
+          const isBuilt = ['/', '/features', '/stats'].includes(item.href);
+          
           return (
             <Link
               key={item.href}
-              href={item.href}
+              href={isBuilt ? item.href : '#'}
+              onClick={(e) => {
+                if (!isBuilt) {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('show-development-modal'));
+                  }
+                }
+              }}
               className={`text-sm font-semibold tracking-wide transition-colors duration-250 ${
                 isActive 
                   ? 'text-[#ccff00]' 
