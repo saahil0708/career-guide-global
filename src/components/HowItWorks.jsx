@@ -33,7 +33,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <div className="w-full flex flex-col gap-8 lg:gap-12 mt-8 mb-6">
+    <div className="w-full flex flex-col gap-8 lg:gap-12 mt-8 mb-6 overflow-hidden">
       {/* Header */}
       <div className="w-full flex flex-col items-center text-center gap-5 max-w-3xl mx-auto mb-10 lg:mb-16 relative pt-4 md:pt-8">
         {/* Massive Watermark */}

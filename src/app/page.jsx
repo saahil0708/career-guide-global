@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MoveRight, Wallet, Check, Target } from 'lucide-react';
 import ExpertiseSection from '../components/ExpertiseSection';
 import Navbar from '../components/navbar';
@@ -72,20 +73,26 @@ export default function Home() {
             >
               {/* Avatar Stack */}
               <div className="flex -space-x-3">
-                <img
+                <Image
                   className="w-9 h-9 rounded-full border-2 border-[#181818] object-cover"
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80"
                   alt="Counselor female 1"
+                  width={36}
+                  height={36}
                 />
-                <img
+                <Image
                   className="w-9 h-9 rounded-full border-2 border-[#181818] object-cover"
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
                   alt="Counselor male 1"
+                  width={36}
+                  height={36}
                 />
-                <img
+                <Image
                   className="w-9 h-9 rounded-full border-2 border-[#181818] object-cover"
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80"
                   alt="Counselor female 2"
+                  width={36}
+                  height={36}
                 />
                 <div className="w-9 h-9 rounded-full border-2 border-[#181818] bg-neutral-800 flex items-center justify-center text-[10px] font-extrabold text-[#ccff00]">
                   +50
@@ -149,7 +156,7 @@ export default function Home() {
           </div>
         </div>
         {/* Right Column */}
-        <div className="lg:col-span-5 hidden lg:block">
+        <div className="lg:col-span-5 w-full mt-6 lg:mt-0">
           <RightTallCard />
         </div>
       </div>

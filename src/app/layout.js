@@ -1,9 +1,15 @@
 import "./globals.css";
-import Navbar from "../components/navbar";
-import RightTallCard from "../components/RightTallCard";
 import ScrollTracker from "../components/ui/ScrollTracker";
 import SmoothScrolling from "../components/SmoothScrolling";
 import DevelopmentModal from "../components/DevelopmentModal";
+import CustomCursor from "../components/CustomCursor";
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata = {
   metadataBase: new URL('https://careerguideglobal.com'),
@@ -50,6 +56,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark">
       <body className="bg-[#181818] text-white min-h-screen selection:bg-[#ccff00]/25 selection:text-[#ccff00]">
         <SmoothScrolling>
+          <CustomCursor />
           <ScrollTracker />
           <DevelopmentModal />
           <div className="w-full max-w-[1240px] mx-auto px-6 md:px-8 py-6">

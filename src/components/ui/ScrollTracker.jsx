@@ -25,7 +25,7 @@ export default function ScrollTracker() {
   }, [scrollYProgress]);
 
   return (
-    <div className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 h-[35vh] md:h-[40vh] w-12 z-50 flex flex-col items-center pointer-events-none mix-blend-difference">
+    <div className="hidden md:flex fixed right-4 md:right-8 top-1/2 -translate-y-1/2 h-[35vh] md:h-[40vh] w-12 z-50 flex-col items-center pointer-events-none mix-blend-difference">
       
       {/* Top Label */}
       <span className="text-[9px] font-extrabold text-neutral-400 tracking-[0.2em] uppercase [writing-mode:vertical-lr] rotate-180 mb-4 opacity-50">

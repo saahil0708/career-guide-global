@@ -19,15 +19,25 @@ export default function PageTransitionLoader({ children }) {
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  // Entrance Morph Paths (Screen fills up from the top, gooey bottom edge)
+  // Entrance Morph Paths (Desktop)
   const enterStart = "M 0 0 L 0 0 L 1000 0 L 1000 0 Q 500 0 0 0 Z";
   const enterMiddle = "M 0 600 L 0 0 L 1000 0 L 1000 600 Q 500 0 0 600 Z";
   const enterEnd = "M 0 1000 L 0 0 L 1000 0 L 1000 1000 Q 500 1000 0 1000 Z";
 
-  // Exit Morph Paths (Screen empties to the top, gooey bottom edge trailing behind)
+  // Exit Morph Paths (Desktop)
   const exitStart = "M 0 1000 L 0 0 L 1000 0 L 1000 1000 Q 500 1000 0 1000 Z";
   const exitMiddle = "M 0 400 L 0 0 L 1000 0 L 1000 400 Q 500 1100 0 400 Z"; 
   const exitEnd = "M 0 0 L 0 0 L 1000 0 L 1000 0 Q 500 0 0 0 Z";
+
+  // Entrance Morph Paths (Mobile)
+  const enterStartMob = "M 0 0 L 0 0 L 1000 0 L 1000 0 Q 500 0 0 0 Z";
+  const enterMiddleMob = "M 0 600 L 0 0 L 1000 0 L 1000 600 Q 500 300 0 600 Z";
+  const enterEndMob = "M 0 1000 L 0 0 L 1000 0 L 1000 1000 Q 500 1000 0 1000 Z";
+
+  // Exit Morph Paths (Mobile)
+  const exitStartMob = "M 0 1000 L 0 0 L 1000 0 L 1000 1000 Q 500 1000 0 1000 Z";
+  const exitMiddleMob = "M 0 400 L 0 0 L 1000 0 L 1000 400 Q 500 700 0 400 Z"; 
+  const exitEndMob = "M 0 0 L 0 0 L 1000 0 L 1000 0 Q 500 0 0 0 Z";
 
   return (
     <>
@@ -37,9 +47,9 @@ export default function PageTransitionLoader({ children }) {
             key="loader-overlay"
             className="fixed inset-0 z-[9999] pointer-events-none"
           >
-            {/* The SVG sweeping background */}
+            {/* Desktop SVG sweeping background */}
             <svg 
-              className="absolute inset-0 w-full h-full pointer-events-none" 
+              className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" 
               viewBox="0 0 1000 1000" 
               preserveAspectRatio="none"
             >
@@ -48,17 +58,31 @@ export default function PageTransitionLoader({ children }) {
                 initial={{ d: enterStart }}
                 animate={{ 
                   d: [enterStart, enterMiddle, enterEnd],
-                  transition: { 
-                    duration: 0.8, 
-                    ease: [0.76, 0, 0.24, 1] 
-                  }
+                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
                 }}
                 exit={{ 
                   d: [exitStart, exitMiddle, exitEnd],
-                  transition: { 
-                    duration: 0.8, 
-                    ease: [0.76, 0, 0.24, 1] 
-                  } 
+                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+                }}
+              />
+            </svg>
+
+            {/* Mobile SVG sweeping background */}
+            <svg 
+              className="absolute inset-0 w-full h-full pointer-events-none md:hidden" 
+              viewBox="0 0 1000 1000" 
+              preserveAspectRatio="none"
+            >
+              <motion.path 
+                fill="#09090b"
+                initial={{ d: enterStartMob }}
+                animate={{ 
+                  d: [enterStartMob, enterMiddleMob, enterEndMob],
+                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
+                }}
+                exit={{ 
+                  d: [exitStartMob, exitMiddleMob, exitEndMob],
+                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
                 }}
               />
             </svg>
