@@ -92,6 +92,17 @@ export default function Navbar() {
 
       {/* Action Area & Theme Toggle */}
       <div className="flex items-center gap-3">
+        {pathname !== '/' && (
+          <Link
+            href="#"
+            onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }}
+            className="group relative overflow-hidden hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full font-extrabold text-[11px] uppercase tracking-wide bg-[#ccff00] text-black transition-transform"
+          >
+            <span className="absolute inset-0 -translate-x-[150%] skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/60 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-[150%]" />
+            <span className="relative z-10">Contact Us</span>
+          </Link>
+        )}
+
         {mounted && (
           <button
             onClick={toggleTheme}

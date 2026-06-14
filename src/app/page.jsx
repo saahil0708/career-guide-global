@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MoveRight, Wallet, Check, Target } from 'lucide-react';
+import { ChevronRight, Wallet, Check, Target } from 'lucide-react';
 import ExpertiseSection from '../components/ExpertiseSection';
 import Navbar from '../components/navbar';
 import RightTallCard from '../components/RightTallCard';
@@ -45,22 +45,25 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="flex items-center gap-2.5 mt-2"
+              className="flex items-center mt-4"
             >
               <Link
                 href="#"
                 onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }}
-                className="bg-[#ccff00] text-black px-8 py-3 rounded-full font-extrabold text-sm hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer shadow-md shadow-[#ccff00]/10"
+                className="group relative inline-flex items-center gap-4 rounded-full p-1 pr-8 cursor-pointer transition-transform"
               >
-                Explore Now
-              </Link>
-              <Link
-                href="#"
-                onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }}
-                className="w-11 h-11 rounded-full bg-[#ccff00] -rotate-[40deg] text-black flex items-center justify-center hover:opacity-90 hover:rotate-0 active:scale-[0.98] transition-all cursor-pointer shadow-md shadow-[#ccff00]/10"
-                aria-label="Go to Features"
-              >
-                <MoveRight className="w-5 h-5" strokeWidth={1.25} />
+                {/* Expanding background */}
+                <div className="absolute left-1 top-1 bottom-1 w-12 rounded-full bg-white group-hover:bg-[#ccff00] transition-all duration-500 ease-out group-hover:w-[calc(100%-8px)] z-0 shadow-md shadow-white/10 group-hover:shadow-[#ccff00]/20" />
+                
+                {/* Icon */}
+                <div className="relative z-10 w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                  <ChevronRight className="w-7 h-7 text-black" strokeWidth={2} />
+                </div>
+                
+                {/* Text */}
+                <span className="relative z-10 font-extrabold text-[15px] text-white transition-colors duration-500 group-hover:text-black">
+                  Know More
+                </span>
               </Link>
             </motion.div>
 
