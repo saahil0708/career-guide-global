@@ -3,16 +3,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Wallet, Check, Target } from 'lucide-react';
+import { MoveRight, Wallet, Check, Target } from 'lucide-react';
 import ExpertiseSection from '../components/ExpertiseSection';
 import Navbar from '../components/navbar';
 import RightTallCard from '../components/RightTallCard';
 import { Marquee } from "@/components/ui/marquee";
 import Testimonials from '@/components/mvpblocks/testimonials-marquee';
 import FAQ from '@/components/faq';
-import dynamic from 'next/dynamic';
-
-const CTA = dynamic(() => import('../components/cta'), { ssr: false });
+import HowItWorks from '../components/HowItWorks';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -58,7 +57,7 @@ export default function Home() {
                 className="w-11 h-11 rounded-full bg-[#ccff00] -rotate-[40deg] text-black flex items-center justify-center hover:opacity-90 hover:rotate-0 active:scale-[0.98] transition-all cursor-pointer shadow-md shadow-[#ccff00]/10"
                 aria-label="Go to Features"
               >
-                <ArrowRight className="w-6 h-6" />
+                <MoveRight className="w-5 h-5" strokeWidth={1.25} />
               </Link>
             </motion.div>
 
@@ -153,6 +152,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* How It Works Section */}
+      <HowItWorks />
+
       {/* Expertise Section */}
       <ExpertiseSection />
 
@@ -186,7 +188,7 @@ export default function Home() {
       </div>
       <Testimonials />
       <FAQ />
-      <CTA />
+      <Footer />
     </div>
   );
 }
