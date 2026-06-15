@@ -22,7 +22,7 @@ export default function ExpertiseSection() {
         <div className="flex items-center gap-4">
           <span className="w-8 md:w-22 h-0.25 bg-[#ccff00]" />
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Key Figures
+            Why Choose Us
           </h2>
         </div>
         <p className="text-neutral-400 text-sm md:text-base max-w-2xl font-light mt-2 leading-relaxed">
