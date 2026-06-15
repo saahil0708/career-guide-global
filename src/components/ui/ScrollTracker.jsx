@@ -19,7 +19,7 @@ export default function ScrollTracker() {
 
   // Track exact percentage
   useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
+    return scrollYProgress.on("change", (latest) => {
       setPercent(Math.round(latest * 100));
     });
   }, [scrollYProgress]);

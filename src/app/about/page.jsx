@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '@/components/navbar';
-import OurStory from '@/components/OurStory';
 
 export default function About() {
     return (
@@ -250,9 +249,6 @@ export default function About() {
 
                         </div>
                     </div>
-
-                    <OurStory />
-                    
                 </main>
             </div>
         </div>

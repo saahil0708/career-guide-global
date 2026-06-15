@@ -13,6 +13,7 @@ import Testimonials from '@/components/mvpblocks/testimonials-marquee';
 import FAQ from '@/components/faq';
 import HowItWorks from '../components/HowItWorks';
 import Footer from '../components/Footer';
+import StatsSection from '../components/StatsSection';
 
 export default function Home() {
   return (
@@ -163,6 +164,9 @@ export default function Home() {
           <RightTallCard />
         </div>
       </div>
+
+      {/* Stats Section */}
+      <StatsSection />
 
       {/* How It Works Section */}
       <HowItWorks />
