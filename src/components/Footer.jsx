@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-neutral-900 mt-20 pt-8">
+    <footer className="w-full">
       <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left Side: Copyright */}
         <div className="flex items-center gap-3">
@@ -17,9 +17,9 @@ export default function Footer() {
         
         {/* Right Side: Links */}
         <div className="flex items-center gap-6 md:gap-8">
-          <Link href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }} className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">About</Link>
-          <Link href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }} className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">Contact</Link>
-          <Link href="#" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }} className="text-[10px] text-neutral-500 hover:text-[#ccff00] uppercase tracking-widest font-bold transition-colors">LinkedIn</Link>
+          <Link href="/about" className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">About</Link>
+          <Link href="/contact" className="text-[10px] text-neutral-500 hover:text-white uppercase tracking-widest font-bold transition-colors">Contact</Link>
+          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[10px] text-neutral-500 hover:text-[#ccff00] uppercase tracking-widest font-bold transition-colors">LinkedIn</Link>
         </div>
       </div>
     </footer>

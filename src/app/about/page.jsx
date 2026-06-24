@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '@/components/navbar';
+import OurStoryFan from '@/components/OurStoryFan';
 
 export default function About() {
     return (
@@ -155,6 +156,11 @@ export default function About() {
                             {/* Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#181818]/80 via-transparent to-transparent pointer-events-none"></div>
                         </div>
+                    </div>
+
+                    {/* OUR STORY FAN SECTION */}
+                    <div className="w-full relative z-20">
+                        <OurStoryFan />
                     </div>
 
                     {/* CORE VALUES SECTION */}

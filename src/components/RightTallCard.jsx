@@ -21,8 +21,7 @@ export default function RightTallCard() {
 
       {/* Top Section: Get Started Button in the extreme top right corner */}
       <Link
-        href="#"
-        onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }}
+        href="/contact"
         className="absolute -top-5 -right-4.5 z-10 px-6 py-2.5 border-20 border-[#181818] outline-none rounded-full font-extrabold text-sm transition-all duration-500 ease-out cursor-pointer shadow-lg shadow-black/25 text-black hover:text-[#ccff00] bg-[linear-gradient(to_right,black_50%,#ccff00_50%)] bg-[length:200%_100%] bg-right hover:bg-left"
       >
         Contact Us

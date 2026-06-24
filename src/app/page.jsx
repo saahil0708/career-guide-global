@@ -49,8 +49,7 @@ export default function Home() {
               className="flex items-center mt-4"
             >
               <Link
-                href="#"
-                onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('show-development-modal')); }}
+                href="/about"
                 className="group relative inline-flex items-center gap-4 rounded-full p-1 pr-8 cursor-pointer transition-transform"
               >
                 {/* Expanding background */}
@@ -204,7 +203,7 @@ export default function Home() {
       </div>
       <Testimonials />
       <FAQ />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
