@@ -60,13 +60,21 @@ export default function RootLayout({ children }) {
       <body className="bg-[#181818] text-white min-h-screen selection:bg-[#ccff00]/25 selection:text-[#ccff00]">
         <Toaster 
           position="bottom-right" 
+          theme="dark"
           toastOptions={{ 
             style: { 
-              background: '#222222', 
+              background: '#1a1a1a', 
               color: '#ffffff', 
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '12px'
-            } 
+              border: '1px solid rgba(204,255,0,0.15)',
+              borderRadius: '16px',
+              boxShadow: '0 10px 40px -10px rgba(204,255,0,0.1)'
+            },
+            classNames: {
+              toast: '!items-start',
+              title: 'text-white font-black text-sm tracking-wide',
+              description: 'text-neutral-300 text-xs font-medium !text-neutral-300',
+              icon: 'text-[#ccff00] mt-0.5'
+            }
           }} 
         />
         <SmoothScrolling>

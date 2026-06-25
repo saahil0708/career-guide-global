@@ -14,7 +14,7 @@ export default function PageTransitionLoader({ children }) {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1800); 
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, [pathname]);
@@ -26,7 +26,7 @@ export default function PageTransitionLoader({ children }) {
 
   // Exit Morph Paths (Desktop)
   const exitStart = "M 0 1000 L 0 0 L 1000 0 L 1000 1000 Q 500 1000 0 1000 Z";
-  const exitMiddle = "M 0 400 L 0 0 L 1000 0 L 1000 400 Q 500 1100 0 400 Z"; 
+  const exitMiddle = "M 0 400 L 0 0 L 1000 0 L 1000 400 Q 500 1100 0 400 Z";
   const exitEnd = "M 0 0 L 0 0 L 1000 0 L 1000 0 Q 500 0 0 0 Z";
 
   // Entrance Morph Paths (Mobile)
@@ -36,7 +36,7 @@ export default function PageTransitionLoader({ children }) {
 
   // Exit Morph Paths (Mobile)
   const exitStartMob = "M 0 1000 L 0 0 L 1000 0 L 1000 1000 Q 500 1000 0 1000 Z";
-  const exitMiddleMob = "M 0 400 L 0 0 L 1000 0 L 1000 400 Q 500 700 0 400 Z"; 
+  const exitMiddleMob = "M 0 400 L 0 0 L 1000 0 L 1000 400 Q 500 700 0 400 Z";
   const exitEndMob = "M 0 0 L 0 0 L 1000 0 L 1000 0 Q 500 0 0 0 Z";
 
   return (
@@ -48,47 +48,47 @@ export default function PageTransitionLoader({ children }) {
             className="fixed inset-0 z-[9999] pointer-events-none"
           >
             {/* Desktop SVG sweeping background */}
-            <svg 
-              className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" 
-              viewBox="0 0 1000 1000" 
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
+              viewBox="0 0 1000 1000"
               preserveAspectRatio="none"
             >
-              <motion.path 
+              <motion.path
                 fill="#09090b"
                 initial={{ d: enterStart }}
-                animate={{ 
+                animate={{
                   d: [enterStart, enterMiddle, enterEnd],
                   transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
                 }}
-                exit={{ 
+                exit={{
                   d: [exitStart, exitMiddle, exitEnd],
-                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
                 }}
               />
             </svg>
 
             {/* Mobile SVG sweeping background */}
-            <svg 
-              className="absolute inset-0 w-full h-full pointer-events-none md:hidden" 
-              viewBox="0 0 1000 1000" 
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none md:hidden"
+              viewBox="0 0 1000 1000"
               preserveAspectRatio="none"
             >
-              <motion.path 
+              <motion.path
                 fill="#09090b"
                 initial={{ d: enterStartMob }}
-                animate={{ 
+                animate={{
                   d: [enterStartMob, enterMiddleMob, enterEndMob],
                   transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
                 }}
-                exit={{ 
+                exit={{
                   d: [exitStartMob, exitMiddleMob, exitEndMob],
-                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+                  transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
                 }}
               />
             </svg>
 
             {/* Loader Text */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.4, ease: [0.76, 0, 0.24, 1] } }}
@@ -99,14 +99,14 @@ export default function PageTransitionLoader({ children }) {
                   <motion.span
                     key={i}
                     className="text-zinc-300 tracking-[0.8em] text-lg md:text-xl font-light ml-[0.2em]"
-                    animate={{ 
+                    animate={{
                       opacity: [0.2, 1, 0.2],
                     }}
-                    transition={{ 
-                      duration: 1.5, 
-                      repeat: Infinity, 
-                      ease: "easeInOut", 
-                      delay: i * 0.1 
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: i * 0.1
                     }}
                   >
                     {char}
@@ -117,7 +117,7 @@ export default function PageTransitionLoader({ children }) {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       {/* Page Content Reveal */}
       <motion.div
         key={pathname}

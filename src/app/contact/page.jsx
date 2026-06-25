@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/navbar';
 import { Mail, Phone, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { toast } from 'sonner';
 import dynamic from 'next/dynamic';
 import { FluidArrowRight } from '@/components/fluid-arrow';
 import Image from 'next/image';
@@ -20,7 +21,6 @@ export default function ContactPage() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -33,13 +33,10 @@ export default function ContactPage() {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      setIsSubmitted(true);
       setFormState({ name: '', email: '', subject: '', message: '' });
-
-      // Reset success state after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+      toast.success('Message sent successfully!', {
+        description: 'Our team will review your message and contact you shortly.',
+      });
     }, 1500);
   };
 
@@ -156,90 +153,85 @@ export default function ContactPage() {
                 <h3 className="text-2xl lg:text-3xl font-black tracking-tight text-white mb-2 uppercase">Send a Message</h3>
                 <p className="text-neutral-400 text-sm font-light mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-                {isSubmitted ? (
-                  <div className="w-full h-[400px] flex flex-col items-center justify-center gap-4 animate-in fade-in zoom-in duration-500">
-                    <div className="w-20 h-20 rounded-full bg-[#ccff00]/10 flex items-center justify-center mb-4">
-                      <CheckCircle2 className="w-10 h-10 text-[#ccff00]" />
-                    </div>
-                    <h4 className="text-2xl font-bold text-white">Message Sent!</h4>
-                    <p className="text-neutral-400 text-center max-w-sm font-medium">
-                      Thank you for reaching out. Our team will review your message and contact you shortly.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10 animate-in fade-in duration-500">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="flex flex-col gap-2">
-                        <label htmlFor="name" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Full Name</label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          required
-                          value={formState.name}
-                          onChange={handleChange}
-                          placeholder="John Doe"
-                          className="w-full bg-[#222222]/50 border border-white/5 rounded-xl px-5 py-4 text-white font-medium text-sm placeholder:text-white/20 focus:outline-none focus:border-[#ccff00]/50 focus:bg-[#222222] transition-all duration-300"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <label htmlFor="email" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Email Address</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          value={formState.email}
-                          onChange={handleChange}
-                          placeholder="john@example.com"
-                          className="w-full bg-[#222222]/50 border border-white/5 rounded-xl px-5 py-4 text-white font-medium text-sm placeholder:text-white/20 focus:outline-none focus:border-[#ccff00]/50 focus:bg-[#222222] transition-all duration-300"
-                        />
-                      </div>
-                    </div>
-
+                <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10 animate-in fade-in duration-500">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="subject" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Subject</label>
+                      <label htmlFor="name" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Full Name</label>
                       <input
                         type="text"
-                        id="subject"
-                        name="subject"
+                        id="name"
+                        name="name"
                         required
-                        value={formState.subject}
+                        value={formState.name}
                         onChange={handleChange}
-                        placeholder="How can we help you?"
+                        placeholder="John Doe"
                         className="w-full bg-[#222222]/50 border border-white/5 rounded-xl px-5 py-4 text-white font-medium text-sm placeholder:text-white/20 focus:outline-none focus:border-[#ccff00]/50 focus:bg-[#222222] transition-all duration-300"
                       />
                     </div>
-
                     <div className="flex flex-col gap-2">
-                      <label htmlFor="message" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Message</label>
-                      <textarea
-                        id="message"
-                        name="message"
+                      <label htmlFor="email" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
                         required
-                        rows="5"
-                        value={formState.message}
+                        value={formState.email}
                         onChange={handleChange}
-                        placeholder="Tell us about your academic goals..."
-                        className="w-full bg-[#222222]/50 border border-white/5 rounded-xl px-5 py-4 text-white font-medium text-sm placeholder:text-white/20 focus:outline-none focus:border-[#ccff00]/50 focus:bg-[#222222] transition-all duration-300 resize-none"
-                      ></textarea>
+                        placeholder="john@example.com"
+                        className="w-full bg-[#222222]/50 border border-white/5 rounded-xl px-5 py-4 text-white font-medium text-sm placeholder:text-white/20 focus:outline-none focus:border-[#ccff00]/50 focus:bg-[#222222] transition-all duration-300"
+                      />
                     </div>
+                  </div>
 
-                    <div className="mt-2">
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="group relative overflow-hidden inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-4 rounded-full font-extrabold text-xs uppercase tracking-widest bg-[#ccff00] text-[#181818] transition-transform active:scale-[0.98] disabled:opacity-70 disabled:hover:scale-100"
-                      >
-                        <span className="absolute inset-0 -translate-x-[150%] skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-in-out group-hover:translate-x-[150%]" />
-                        <span className="relative z-10 flex items-center gap-2">
-                          {isSubmitting ? 'Sending...' : 'Send Message'}
-                          {!isSubmitting && <FluidArrowRight className="w-4 h-4 text-[#181818] transition-transform" />}
-                        </span>
-                      </button>
-                    </div>
-                  </form>
-                )}
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="subject" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Subject</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      required
+                      value={formState.subject}
+                      onChange={handleChange}
+                      placeholder="How can we help you?"
+                      className="w-full bg-[#222222]/50 border border-white/5 rounded-xl px-5 py-4 text-white font-medium text-sm placeholder:text-white/20 focus:outline-none focus:border-[#ccff00]/50 focus:bg-[#222222] transition-all duration-300"
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="message" className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider ml-1">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows="5"
+                      value={formState.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about your academic goals..."
+                      className="w-full bg-[#222222]/50 border border-white/5 rounded-xl px-5 py-4 text-white font-medium text-sm placeholder:text-white/20 focus:outline-none focus:border-[#ccff00]/50 focus:bg-[#222222] transition-all duration-300 resize-none"
+                    ></textarea>
+                  </div>
+
+                  <div className="mt-2">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="group relative overflow-hidden inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 rounded-full font-extrabold text-xs uppercase tracking-widest bg-[#ccff00] text-[#181818] disabled:opacity-70 transition-colors hover:bg-white duration-500"
+                    >
+                      <div className="relative h-[16px] overflow-hidden">
+                        <div className="flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] group-hover:-translate-y-[32px]">
+                          <span className="flex items-center gap-2 h-[16px] mb-[16px]">
+                            {isSubmitting ? 'Sending...' : 'Send Message'}
+                            {!isSubmitting && <FluidArrowRight className="w-4 h-4 text-[#181818]" />}
+                          </span>
+                          <span className="flex items-center gap-2 h-[16px]">
+                            {isSubmitting ? 'Sending...' : 'Send Message'}
+                            {!isSubmitting && <FluidArrowRight className="w-4 h-4 text-[#181818]" />}
+                          </span>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
 
